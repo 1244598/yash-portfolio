@@ -6,34 +6,24 @@
   ============================================================================
   Search this file for "TODO" to find each one in place.
 
-  1. CONTACT LINKS  (search: data-todo="contact")
-     - Email address ................ currently "you@example.com"
-     - LinkedIn URL ................. currently "#"
-     - GitHub URL ................... currently "#"
-     These appear in BOTH the Contact section and the Footer — update both,
-     or better: update the Contact section and keep the footer in sync.
-
-  2. RESUME  (search: data-todo="resume")
+  1. RESUME  (search: data-todo="resume")
      - Drop your PDF at assets/resume.pdf. The link is already wired up.
+       This is currently the only broken link on the site.
 
-  3. COLLEGE LOGO  (search: data-todo="logo")
+  2. COLLEGE LOGO  (search: data-todo="logo")
      - Drop the institute logo at assets/iitkgp-logo.png, then swap the
        fallback icon for the commented-out <img> tag right above it.
        A styled fallback icon shows until you do.
 
-  4. PROFILE PHOTO  (search: data-todo="photo")
-     - Drop a square photo at assets/profile.jpg, then swap the initials
-       avatar for the commented-out <img> tag right above it.
-
-  5. PROJECTS  (search: data-todo="project")
+  3. PROJECTS  (search: data-todo="project")
      - Three placeholder cards. Replace titles, descriptions, tech tags and
        links. A copy-paste card template is included as an HTML comment.
 
-  6. OPEN GRAPH / SEO  (search: data-todo="meta")
+  4. OPEN GRAPH / SEO  (search: data-todo="meta")
      - og:url and og:image expect the final deployed URL. Update after
        deploying, and add assets/og-image.png (1200x630) for link previews.
 
-  7. SOCIAL PREVIEW IMAGE
+  5. SOCIAL PREVIEW IMAGE
      - assets/og-image.png does not exist yet. Links will still work, they
        just won't show a preview card until you add it.
 
@@ -47,7 +37,7 @@
   <title>Yash Laxkar — Software Engineer</title>
   <meta
     name="description"
-    content="Yash Laxkar — Software Engineer at Walmart Global Tech, IIT Kharagpur graduate, and competitive programmer. Codeforces Specialist and CodeChef 4-star."
+    content="Yash Laxkar — Software Engineer at Walmart Global Tech, IIT Kharagpur graduate, and competitive programmer. Codeforces Specialist, peak rating 1518."
   />
   <meta name="author" content="Yash Laxkar" />
   <meta name="theme-color" content="#0a0c12" />
@@ -167,23 +157,24 @@
           </p>
         </div>
 
-        <div class="hero__media reveal" data-todo="photo">
+        <div class="hero__media reveal">
           <div class="avatar">
             <!--
-              TODO: once assets/profile.jpg exists, delete the .avatar__initials
-              div below and uncomment this image instead:
-
-              <img
-                class="avatar__img"
-                src="assets/profile.jpg"
-                alt="Portrait of Yash Laxkar"
-                width="320"
-                height="320"
-              />
+              Above the fold, so it is eagerly loaded and prioritised for LCP.
+              width/height match the file and reserve the box against layout
+              shift; the CSS sizes it responsively from there.
+              (The .avatar__initials fallback still exists in style.css if the
+              photo is ever removed.)
             -->
-            <div class="avatar__initials" role="img" aria-label="Yash Laxkar">
-              YL
-            </div>
+            <img
+              class="avatar__img"
+              src="assets/profile.jpg"
+              alt="Yash Laxkar"
+              width="600"
+              height="600"
+              fetchpriority="high"
+              decoding="async"
+            />
             <div class="avatar__ring" aria-hidden="true"></div>
           </div>
         </div>
@@ -324,25 +315,6 @@
             </span>
           </a>
 
-          <a
-            class="cp-card reveal"
-            href="https://www.codechef.com/users/yashlaxkar1"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="cp-card__top">
-              <span class="cp-card__platform">CodeChef</span>
-              <span class="badge badge--cc">4★</span>
-            </div>
-            <p class="cp-card__rating"><span>1921</span><small>peak</small></p>
-            <p class="cp-card__handle">yashlaxkar1</p>
-            <span class="cp-card__cta">
-              View profile
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 17 17 7M9 7h8v8" />
-              </svg>
-            </span>
-          </a>
         </div>
       </div>
     </section>
@@ -611,10 +583,8 @@
             about. My inbox is open.
           </p>
 
-          <!-- data-todo="contact" — replace the email and social URLs below -->
-          <div class="contact__cta" data-todo="contact">
-            <!-- TODO: replace with your real email address -->
-            <a class="btn btn--primary" href="mailto:you@example.com">
+          <div class="contact__cta">
+            <a class="btn btn--primary" href="mailto:yashlaxkar1@gmail.com">
               <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="3" y="5" width="18" height="14" rx="2" />
                 <path d="M3 7l9 6 9-6" />
@@ -625,8 +595,7 @@
 
           <ul class="contact__links">
             <li>
-              <!-- TODO: replace with your real email address -->
-              <a href="mailto:you@example.com">
+              <a href="mailto:yashlaxkar1@gmail.com">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <rect x="3" y="5" width="18" height="14" rx="2" />
                   <path d="M3 7l9 6 9-6" />
@@ -635,8 +604,15 @@
               </a>
             </li>
             <li>
-              <!-- TODO: replace "#" with your LinkedIn profile URL -->
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="tel:+918741962932">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z" />
+                </svg>
+                <span>+91 87419 62932</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/yash-laxkar-9b176420b/" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <rect x="3" y="3" width="18" height="18" rx="2" />
                   <path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4" />
@@ -645,8 +621,7 @@
               </a>
             </li>
             <li>
-              <!-- TODO: replace "#" with your GitHub profile URL -->
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/1244598" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     d="M9 19c-4 1.5-4-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 4.5-1.4 4.5-4.8a3.7 3.7 0 0 0-1-2.6 3.4 3.4 0 0 0-.1-2.6s-1.1-.3-3.5 1.3a9.4 9.4 0 0 0-5 0C7.1 3.6 6 3.9 6 3.9a3.4 3.4 0 0 0-.1 2.6 3.7 3.7 0 0 0-1 2.6c0 3.4 1.7 4.5 4.5 4.8-.6.6-.6 1.2-.5 2V21"
@@ -667,19 +642,6 @@
                   <rect x="17" y="7" width="4" height="14" rx="1" />
                 </svg>
                 <span>Codeforces</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.codechef.com/users/yashlaxkar1"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 3c2 3-1 4 0 7 3-1 5 1 5 4a5 5 0 0 1-10 0c0-4 4-7 5-11z" />
-                  <path d="M4 21h16" />
-                </svg>
-                <span>CodeChef</span>
               </a>
             </li>
           </ul>

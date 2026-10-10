@@ -28,7 +28,7 @@ Build a polished, modern, **static** personal portfolio website for Yash Laxkar 
 1. **Hero**: Name, short tagline (e.g. "Software Engineer at Walmart Global Tech | Competitive Programmer"), two buttons (View Projects, Contact Me), and the profile photo.
 2. **About Me**: A short, personal paragraph. Mention IIT Kharagpur, Walmart, competitive programming, and fitness.
 3. **Experience**: Walmart Global Tech (Software Engineer, joined Aug 2025, Bengaluru) and Software Development Intern at Walmart (May to Jul 2024). Present as a clean vertical timeline.
-4. **Competitive Programming**: Codeforces Specialist (peak rating 1518, handle `yash_laxkar1`) and CodeChef 4-star (peak rating 1921, handle `yashlaxkar1`). Show as stat cards with links to the profiles.
+4. **Competitive Programming**: Codeforces Specialist (peak rating 1518, handle `yash_laxkar1`). Show as stat cards with links to the profiles. **CodeChef has been removed** — that account is lost. Do not re-add it.
 5. **Projects**: Card grid. Start with placeholders the owner can fill in:
    - Personal swing-trading signal app (technicals + sentiment + order book depth)
    - Android app(s) planned for the Google Play Store
@@ -39,13 +39,20 @@ Build a polished, modern, **static** personal portfolio website for Yash Laxkar 
    page, and do not record the figure in this repo (it is a public repo) — not in
    markup, not in comments, not here. Do not add it back unless asked.
 8. **Hobbies / Beyond Code**: Gym and fitness, competitive programming. Keep the tone personal and a little playful. Use icon-style cards.
-9. **Contact**: Email, LinkedIn, GitHub, Codeforces, CodeChef links. Use `mailto:` for email. No backend form (a simple "Say hello" email button is enough).
+9. **Contact**: Email, phone (`tel:`), LinkedIn, GitHub, Codeforces links. Use `mailto:` for email. No backend form (a simple "Say hello" email button is enough).
 10. **Footer**: Copyright line and a back-to-top link.
+
+## Real contact details (now live on the site)
+- Email: `yashlaxkar1@gmail.com`
+- Phone: `+91 87419 62932` (shown publicly as a `tel:` link — remove it if it attracts spam)
+- LinkedIn: https://www.linkedin.com/in/yash-laxkar-9b176420b/
+- GitHub: https://github.com/1244598
+- Codeforces: https://codeforces.com/profile/yash_laxkar1
 
 ## Placeholders (do NOT invent real data)
 Use obvious placeholders and list them in a `TODO` comment at the top of `index.html`:
-- Email address, LinkedIn URL, GitHub URL
 - Resume PDF link (`assets/resume.pdf`)
+- Institute logo (`assets/iitkgp-logo.png`)
 - Project descriptions and links
 - Any facts not listed in this file
 

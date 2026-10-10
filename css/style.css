@@ -889,7 +889,10 @@ svg {
 /* ====================== 10. COMPETITIVE PROGRAMMING ===================== */
 .cp-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  /* Capped at 360px so a single card sits at a natural width instead of
+     stretching the whole row; more cards still flow in alongside it. */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 360px));
+  justify-content: start;
   gap: var(--sp-4);
 }
 
@@ -960,13 +963,6 @@ svg {
   color: #5ad6c8;
   background: rgba(90, 214, 200, 0.12);
   border: 1px solid rgba(90, 214, 200, 0.3);
-}
-
-/* CodeChef 4-star is violet */
-.badge--cc {
-  color: #c08bff;
-  background: rgba(192, 139, 255, 0.12);
-  border: 1px solid rgba(192, 139, 255, 0.3);
 }
 
 .cp-card__rating {
