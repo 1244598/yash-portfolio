@@ -1,0 +1,11 @@
+# Editors / IDEs
+.idea/
+.vscode/
+*.iml
+
+# macOS
+.DS_Store
+._*
+
+# Logs
+*.log

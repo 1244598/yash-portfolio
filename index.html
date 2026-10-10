@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<!--
+  ============================================================================
+  TODO — PLACEHOLDERS TO REPLACE WITH REAL CONTENT
+  ============================================================================
+  Search this file for "TODO" to find each one in place.
+
+  1. CONTACT LINKS  (search: data-todo="contact")
+     - Email address ................ currently "you@example.com"
+     - LinkedIn URL ................. currently "#"
+     - GitHub URL ................... currently "#"
+     These appear in BOTH the Contact section and the Footer — update both,
+     or better: update the Contact section and keep the footer in sync.
+
+  2. RESUME  (search: data-todo="resume")
+     - Drop your PDF at assets/resume.pdf. The link is already wired up.
+
+  3. PROFILE PHOTO  (search: data-todo="photo")
+     - Drop a square photo at assets/profile.jpg, then swap the initials
+       avatar for the commented-out <img> tag right above it.
+
+  4. PROJECTS  (search: data-todo="project")
+     - Three placeholder cards. Replace titles, descriptions, tech tags and
+       links. A copy-paste card template is included as an HTML comment.
+
+  5. OPEN GRAPH / SEO  (search: data-todo="meta")
+     - og:url and og:image expect the final deployed URL. Update after
+       deploying, and add assets/og-image.png (1200x630) for link previews.
+
+  6. SOCIAL PREVIEW IMAGE
+     - assets/og-image.png does not exist yet. Links will still work, they
+       just won't show a preview card until you add it.
+
+  Everything else on this page is real, verified content. Do not add
+  achievements, metrics or links that aren't yours.
+  ============================================================================
+-->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yash Laxkar — Software Engineer</title>
+  <meta
+    name="description"
+    content="Yash Laxkar — Software Engineer at Walmart Global Tech, IIT Kharagpur graduate, and competitive programmer. Codeforces Specialist and CodeChef 4-star."
+  />
+  <meta name="author" content="Yash Laxkar" />
+  <meta name="theme-color" content="#0a0c12" />
+
+  <!-- Open Graph / social previews — data-todo="meta" -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Yash Laxkar — Software Engineer" />
+  <meta
+    property="og:description"
+    content="Software Engineer at Walmart Global Tech. IIT Kharagpur. Competitive programmer."
+  />
+  <!-- TODO: replace with your deployed URL -->
+  <meta property="og:url" content="https://1244598.github.io/yash-portfolio/" />
+  <!-- TODO: add assets/og-image.png (1200x630) -->
+  <meta property="og:image" content="assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Yash Laxkar — Software Engineer" />
+  <meta
+    name="twitter:description"
+    content="Software Engineer at Walmart Global Tech. IIT Kharagpur. Competitive programmer."
+  />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Drops the no-js guard before first paint, so scroll-reveal elements
+       start hidden only when JS is actually there to reveal them. -->
+  <script>
+    document.documentElement.classList.remove("no-js");
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a class="nav__brand" href="#hero" aria-label="Yash Laxkar — home">
+        <span class="nav__mark">YL</span>
+        <span class="nav__brandtext">Yash Laxkar</span>
+      </a>
+
+      <nav class="nav__links" id="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#cp">Competitive</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button
+        class="nav__toggle"
+        id="nav-toggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow reveal">
+            <span class="hero__dot" aria-hidden="true"></span>
+            Bengaluru, India
+          </p>
+
+          <h1 class="hero__title reveal">
+            Hi, I'm <span class="grad">Yash Laxkar</span>
+          </h1>
+
+          <p class="hero__tagline reveal">
+            Software Engineer at Walmart Global Tech
+            <span class="hero__sep" aria-hidden="true">|</span>
+            Competitive Programmer
+          </p>
+
+          <p class="hero__blurb reveal">
+            I build backend systems that hold up under load, and I spend my
+            spare cycles solving algorithmic problems and lifting heavy things.
+            IIT Kharagpur, Mathematics &amp; Computing.
+          </p>
+
+          <div class="hero__actions reveal">
+            <a class="btn btn--primary" href="#projects">
+              View Projects
+              <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a class="btn btn--ghost" href="#contact">Contact Me</a>
+          </div>
+
+          <!-- data-todo="resume" — drop your PDF at assets/resume.pdf -->
+          <p class="hero__resume reveal" data-todo="resume">
+            <a class="link-quiet" href="assets/resume.pdf" download>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12M7 11l5 5 5-5M5 21h14" />
+              </svg>
+              Download résumé (PDF)
+            </a>
+          </p>
+        </div>
+
+        <div class="hero__media reveal" data-todo="photo">
+          <div class="avatar">
+            <!--
+              TODO: once assets/profile.jpg exists, delete the .avatar__initials
+              div below and uncomment this image instead:
+
+              <img
+                class="avatar__img"
+                src="assets/profile.jpg"
+                alt="Portrait of Yash Laxkar"
+                width="320"
+                height="320"
+              />
+            -->
+            <div class="avatar__initials" role="img" aria-label="Yash Laxkar">
+              YL
+            </div>
+            <div class="avatar__ring" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">01</span>
+          <h2 class="section__title">About Me</h2>
+        </header>
+
+        <div class="about">
+          <div class="about__text reveal">
+            <p>
+              I graduated from <strong>IIT Kharagpur</strong> with an integrated
+              M.Sc in Mathematics &amp; Computing, which is a long way of saying
+              I spent five years learning how to think about problems before
+              writing code for them. These days I'm a Software Engineer at
+              <strong>Walmart Global Tech</strong> in Bengaluru, where I work on
+              systems that have to be correct at a scale where "mostly correct"
+              is not a thing.
+            </p>
+            <p>
+              <strong>Competitive programming</strong> is what got me here. It's
+              still the habit I'm least likely to drop — there's something
+              clarifying about a problem that either passes every test case or
+              doesn't. Outside of that, you'll find me in the
+              <strong>gym</strong>, chasing a number on a barbell with roughly
+              the same stubbornness I bring to a failing submission.
+            </p>
+          </div>
+
+          <ul class="about__facts reveal">
+            <li>
+              <span class="about__label">Currently</span>
+              <span class="about__value">SWE @ Walmart Global Tech</span>
+            </li>
+            <li>
+              <span class="about__label">Based in</span>
+              <span class="about__value">Bengaluru, India</span>
+            </li>
+            <li>
+              <span class="about__label">Studied</span>
+              <span class="about__value">M.Sc Maths &amp; Computing, IIT KGP</span>
+            </li>
+            <li>
+              <span class="about__label">Focus</span>
+              <span class="about__value">Backend · Algorithms</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="section" id="experience">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">02</span>
+          <h2 class="section__title">Experience</h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="timeline__item reveal">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__card">
+              <p class="timeline__date">Aug 2025 — Present</p>
+              <h3 class="timeline__role">Software Engineer</h3>
+              <p class="timeline__org">
+                Walmart Global Tech
+                <span class="timeline__loc">· Bengaluru, India</span>
+              </p>
+              <p class="timeline__desc">
+                Building and maintaining backend services as part of the
+                engineering org.
+              </p>
+              <ul class="tags">
+                <li class="tag">Java</li>
+                <li class="tag">Spring Boot</li>
+                <li class="tag">Backend</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__card">
+              <p class="timeline__date">May 2024 — Jul 2024</p>
+              <h3 class="timeline__role">Software Development Intern</h3>
+              <p class="timeline__org">Walmart</p>
+              <p class="timeline__desc">
+                Summer internship on the software development team, which led to
+                a full-time return offer.
+              </p>
+              <ul class="tags">
+                <li class="tag">Java</li>
+                <li class="tag">Internship</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================ COMPETITIVE PROGRAMMING ================ -->
+    <section class="section" id="cp">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">03</span>
+          <h2 class="section__title">Competitive Programming</h2>
+          <p class="section__sub">
+            Years of contests, a lot of wrong answers on test 2, and a genuine
+            love for the problems.
+          </p>
+        </header>
+
+        <div class="cp-grid">
+          <a
+            class="cp-card reveal"
+            href="https://codeforces.com/profile/yash_laxkar1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="cp-card__top">
+              <span class="cp-card__platform">Codeforces</span>
+              <span class="badge badge--cf">Specialist</span>
+            </div>
+            <p class="cp-card__rating"><span>1518</span><small>peak</small></p>
+            <p class="cp-card__handle">yash_laxkar1</p>
+            <span class="cp-card__cta">
+              View profile
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17 17 7M9 7h8v8" />
+              </svg>
+            </span>
+          </a>
+
+          <a
+            class="cp-card reveal"
+            href="https://www.codechef.com/users/yashlaxkar1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="cp-card__top">
+              <span class="cp-card__platform">CodeChef</span>
+              <span class="badge badge--cc">4★</span>
+            </div>
+            <p class="cp-card__rating"><span>1921</span><small>peak</small></p>
+            <p class="cp-card__handle">yashlaxkar1</p>
+            <span class="cp-card__cta">
+              View profile
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17 17 7M9 7h8v8" />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">04</span>
+          <h2 class="section__title">Projects</h2>
+          <p class="section__sub">Things I'm building outside of work hours.</p>
+        </header>
+
+        <div class="projects">
+          <!--
+            ============================================================
+            PROJECT CARD TEMPLATE — copy this whole <article> to add one
+            ============================================================
+            <article class="project reveal">
+              <div class="project__head">
+                <svg class="project__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 7h16M4 12h16M4 17h10" />
+                </svg>
+                <span class="project__status">In progress</span>
+              </div>
+              <h3 class="project__title">Project name</h3>
+              <p class="project__desc">
+                One or two sentences: what it does and why you built it.
+              </p>
+              <ul class="tags">
+                <li class="tag">Tech</li>
+                <li class="tag">Tech</li>
+              </ul>
+              <div class="project__links">
+                <a href="#" target="_blank" rel="noopener noreferrer">Code</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">Live</a>
+              </div>
+            </article>
+            ============================================================
+          -->
+
+          <article class="project reveal" data-todo="project">
+            <div class="project__head">
+              <svg class="project__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 17l5-6 4 3 5-7 4 4" />
+                <path d="M3 21h18" />
+              </svg>
+              <span class="project__status">In progress</span>
+            </div>
+            <h3 class="project__title">Swing-Trading Signal App</h3>
+            <p class="project__desc">
+              A personal signal engine that combines technical indicators,
+              market sentiment and order-book depth to surface swing-trade
+              candidates.
+              <em class="todo">TODO: describe the approach, data sources and
+              what you've learned from running it.</em>
+            </p>
+            <ul class="tags">
+              <li class="tag">Python</li>
+              <li class="tag">PostgreSQL</li>
+              <li class="tag">Market Data</li>
+            </ul>
+            <div class="project__links">
+              <!-- TODO: add repo / demo links, or delete this block -->
+              <span class="project__links-todo">Links coming soon</span>
+            </div>
+          </article>
+
+          <article class="project reveal" data-todo="project">
+            <div class="project__head">
+              <svg class="project__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="6" y="2" width="12" height="20" rx="2" />
+                <path d="M11 18h2" />
+              </svg>
+              <span class="project__status">Planned</span>
+            </div>
+            <h3 class="project__title">Android App — Play Store</h3>
+            <p class="project__desc">
+              An Android app I'm building with the goal of shipping it to the
+              Google Play Store.
+              <em class="todo">TODO: name the app, say what problem it solves,
+              and link the Play Store listing once it's live.</em>
+            </p>
+            <ul class="tags">
+              <li class="tag">Android</li>
+              <li class="tag">Kotlin</li>
+            </ul>
+            <div class="project__links">
+              <span class="project__links-todo">Links coming soon</span>
+            </div>
+          </article>
+
+          <article class="project reveal" data-todo="project">
+            <div class="project__head">
+              <svg class="project__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v18M3 12h18" />
+                <circle cx="12" cy="12" r="9" />
+              </svg>
+              <span class="project__status">Your turn</span>
+            </div>
+            <h3 class="project__title">Add your next project</h3>
+            <p class="project__desc">
+              <em class="todo">TODO: replace this card. There's a copy-paste
+              card template in an HTML comment just above the first project —
+              duplicate it as many times as you need, then delete this
+              placeholder.</em>
+            </p>
+            <ul class="tags">
+              <li class="tag">Tech</li>
+              <li class="tag">Tech</li>
+            </ul>
+            <div class="project__links">
+              <span class="project__links-todo">—</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">05</span>
+          <h2 class="section__title">Skills</h2>
+        </header>
+
+        <div class="skills">
+          <div class="skills__group reveal">
+            <h3 class="skills__label">Languages</h3>
+            <ul class="chips">
+              <li class="chip">C</li>
+              <li class="chip">C++</li>
+              <li class="chip">Python</li>
+              <li class="chip">Java</li>
+            </ul>
+          </div>
+
+          <div class="skills__group reveal">
+            <h3 class="skills__label">Frameworks</h3>
+            <ul class="chips">
+              <li class="chip">Spring Boot</li>
+              <li class="chip">React.js</li>
+            </ul>
+          </div>
+
+          <div class="skills__group reveal">
+            <h3 class="skills__label">Databases</h3>
+            <ul class="chips">
+              <li class="chip">PostgreSQL</li>
+              <li class="chip">MySQL</li>
+            </ul>
+          </div>
+
+          <div class="skills__group reveal">
+            <h3 class="skills__label">Tools</h3>
+            <ul class="chips">
+              <li class="chip">Git</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EDUCATION ===================== -->
+    <section class="section" id="education">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">06</span>
+          <h2 class="section__title">Education</h2>
+        </header>
+
+        <div class="edu reveal">
+          <div class="edu__main">
+            <h3 class="edu__school">Indian Institute of Technology Kharagpur</h3>
+            <p class="edu__degree">
+              M.Sc (5-year Integrated) — Mathematics &amp; Computing
+            </p>
+            <p class="edu__meta">Graduated 2025</p>
+          </div>
+          <div class="edu__cgpa">
+            <span class="edu__cgpa-value">7.77</span>
+            <span class="edu__cgpa-scale">/ 10 CGPA</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HOBBIES ===================== -->
+    <section class="section" id="hobbies">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">07</span>
+          <h2 class="section__title">Beyond Code</h2>
+        </header>
+
+        <div class="hobbies">
+          <article class="hobby reveal">
+            <div class="hobby__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M6.5 6.5v11M17.5 6.5v11M4 9v6M20 9v6M6.5 12h11" />
+              </svg>
+            </div>
+            <h3 class="hobby__title">Gym &amp; Fitness</h3>
+            <p class="hobby__desc">
+              Progressive overload is just an optimisation problem with sore
+              shoulders. Lifting keeps me honest — the bar doesn't care how
+              clever your excuse is.
+            </p>
+          </article>
+
+          <article class="hobby reveal">
+            <div class="hobby__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 6l-5 6 5 6M16 6l5 6-5 6M13 4l-2 16" />
+              </svg>
+            </div>
+            <h3 class="hobby__title">Competitive Programming</h3>
+            <p class="hobby__desc">
+              Weekend contests, a timer counting down, and that very specific
+              joy of a greedy solution that actually turns out to be correct.
+              Still chasing the next rating bracket.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section section--contact" id="contact">
+      <div class="container">
+        <div class="contact reveal">
+          <h2 class="contact__title">Let's build something</h2>
+          <p class="contact__text">
+            I'm always up for a good conversation about backend systems, a
+            tricky algorithm, or a programming problem you can't stop thinking
+            about. My inbox is open.
+          </p>
+
+          <!-- data-todo="contact" — replace the email and social URLs below -->
+          <div class="contact__cta" data-todo="contact">
+            <!-- TODO: replace with your real email address -->
+            <a class="btn btn--primary" href="mailto:you@example.com">
+              <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="M3 7l9 6 9-6" />
+              </svg>
+              Say hello
+            </a>
+          </div>
+
+          <ul class="contact__links">
+            <li>
+              <!-- TODO: replace with your real email address -->
+              <a href="mailto:you@example.com">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="M3 7l9 6 9-6" />
+                </svg>
+                <span>Email</span>
+              </a>
+            </li>
+            <li>
+              <!-- TODO: replace "#" with your LinkedIn profile URL -->
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4" />
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <!-- TODO: replace "#" with your GitHub profile URL -->
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M9 19c-4 1.5-4-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 4.5-1.4 4.5-4.8a3.7 3.7 0 0 0-1-2.6 3.4 3.4 0 0 0-.1-2.6s-1.1-.3-3.5 1.3a9.4 9.4 0 0 0-5 0C7.1 3.6 6 3.9 6 3.9a3.4 3.4 0 0 0-.1 2.6 3.7 3.7 0 0 0-1 2.6c0 3.4 1.7 4.5 4.5 4.8-.6.6-.6 1.2-.5 2V21"
+                  />
+                </svg>
+                <span>GitHub</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://codeforces.com/profile/yash_laxkar1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="10" width="4" height="11" rx="1" />
+                  <rect x="10" y="4" width="4" height="17" rx="1" />
+                  <rect x="17" y="7" width="4" height="14" rx="1" />
+                </svg>
+                <span>Codeforces</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.codechef.com/users/yashlaxkar1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3c2 3-1 4 0 7 3-1 5 1 5 4a5 5 0 0 1-10 0c0-4 4-7 5-11z" />
+                  <path d="M4 21h16" />
+                </svg>
+                <span>CodeChef</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">
+        © <span id="year">2026</span> Yash Laxkar. Built from scratch — no
+        templates, no frameworks.
+      </p>
+      <a class="footer__top" href="#hero">
+        Back to top
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 19V5M6 11l6-6 6 6" />
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
