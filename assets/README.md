@@ -7,7 +7,7 @@ render — the page has fallbacks — but each file below unlocks something.
 |------|--------------|-------------|
 | `profile.jpg` | Hero portrait. **Already added** (600×600, cropped from the original). | Square, 600×600+ |
 | `resume.pdf` | Wires up the "Download résumé" link in the hero. | — |
-| `iitkgp-logo.png` | Logo beside the college name in Education. Replaces the fallback icon. | Square, 256×256+, transparent |
+| `iitkgp-logo.png` | Logo beside the college name in Education. **Already added** (192×192, transparent). | — |
 | `og-image.png` | Preview card when the site is shared on LinkedIn/X/WhatsApp. | 1200×630 |
 | `favicon.svg` | Browser tab icon. **Already included.** | — |
 
@@ -21,11 +21,13 @@ If you swap in a non-square image, crop it to a square first, or
 `object-fit: cover` will centre-crop it for you (which may cut off a face
 that isn't centred).
 
-## After adding `iitkgp-logo.png`
+## About the institute logo
 
-Open `index.html`, find `data-todo="logo"`, and swap the fallback `<div>` for
-the commented-out `<img>` tag above it.
+`iitkgp-logo.png` came from the Wikipedia article on IIT Kharagpur, where it
+is published under a **fair use** claim — it is the institute's trademark,
+not public-domain artwork. Using it to show where you studied is ordinary
+nominative use, the same as putting it on a CV. Swap or drop it if you'd
+rather not carry it.
 
-If the logo has dark ink and gets lost against the dark tile, change the
-wrapper to `<div class="edu__logo edu__logo--light" ...>` — that gives it a
-near-white backing instead.
+It sits on a near-white tile (`.edu__logo--light`) because the mark is dark
+navy and disappears against the dark card.

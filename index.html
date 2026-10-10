@@ -2,33 +2,22 @@
 <html lang="en" class="no-js">
 <!--
   ============================================================================
-  TODO — PLACEHOLDERS TO REPLACE WITH REAL CONTENT
+  TODO — WHAT STILL NEEDS REAL CONTENT
   ============================================================================
-  Search this file for "TODO" to find each one in place.
+  Each item is tagged inline too — search for data-todo="..."
 
-  1. RESUME  (search: data-todo="resume")
-     - Drop your PDF at assets/resume.pdf. The link is already wired up.
-       This is currently the only broken link on the site.
+  1. RESUME   (data-todo="resume")   Drop your PDF at assets/resume.pdf.
+                                     Currently the only broken link.
+  2. PROJECTS (data-todo="project")  Real descriptions + links. A copy-paste
+                                     card template sits above the first card.
+  3. OG IMAGE (data-todo="meta")     Add assets/og-image.png (1200x630) for
+                                     link previews, then check og:url.
 
-  2. COLLEGE LOGO  (search: data-todo="logo")
-     - Drop the institute logo at assets/iitkgp-logo.png, then swap the
-       fallback icon for the commented-out <img> tag right above it.
-       A styled fallback icon shows until you do.
+  Everything else is real, verified content. Never add achievements, metrics
+  or links that aren't yours.
 
-  3. PROJECTS  (search: data-todo="project")
-     - Three placeholder cards. Replace titles, descriptions, tech tags and
-       links. A copy-paste card template is included as an HTML comment.
-
-  4. OPEN GRAPH / SEO  (search: data-todo="meta")
-     - og:url and og:image expect the final deployed URL. Update after
-       deploying, and add assets/og-image.png (1200x630) for link previews.
-
-  5. SOCIAL PREVIEW IMAGE
-     - assets/og-image.png does not exist yet. Links will still work, they
-       just won't show a preview card until you add it.
-
-  Everything else on this page is real, verified content. Do not add
-  achievements, metrics or links that aren't yours.
+  NOTE: the IIT Kharagpur logo in Education is used under fair use to show
+  where the site's owner studied. It is the institute's trademark.
   ============================================================================
 -->
 <head>
@@ -40,7 +29,7 @@
     content="Yash Laxkar — Software Engineer at Walmart Global Tech, IIT Kharagpur graduate, and competitive programmer. Codeforces Specialist, peak rating 1518."
   />
   <meta name="author" content="Yash Laxkar" />
-  <meta name="theme-color" content="#0a0c12" />
+  <meta name="theme-color" content="#08090e" />
 
   <!-- Open Graph / social previews — data-todo="meta" -->
   <meta property="og:type" content="website" />
@@ -49,7 +38,6 @@
     property="og:description"
     content="Software Engineer at Walmart Global Tech. IIT Kharagpur. Competitive programmer."
   />
-  <!-- TODO: replace with your deployed URL -->
   <meta property="og:url" content="https://1244598.github.io/yash-portfolio/" />
   <!-- TODO: add assets/og-image.png (1200x630) -->
   <meta property="og:image" content="assets/og-image.png" />
@@ -112,7 +100,7 @@
   <main id="main">
     <!-- ===================== HERO ===================== -->
     <section class="hero" id="hero">
-      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__aura" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__content">
           <p class="hero__eyebrow reveal">
@@ -121,19 +109,17 @@
           </p>
 
           <h1 class="hero__title reveal">
-            Hi, I'm <span class="grad">Yash Laxkar</span>
+            Hi, I'm <span class="grad">Yash&nbsp;Laxkar</span>
           </h1>
 
           <p class="hero__tagline reveal">
-            Software Engineer at Walmart Global Tech
-            <span class="hero__sep" aria-hidden="true">|</span>
+            Software Engineer at <strong>Walmart Global Tech</strong>
+            <span class="hero__sep" aria-hidden="true"></span>
             Competitive Programmer
           </p>
 
           <p class="hero__blurb reveal">
-            I build backend systems that hold up under load, and I spend my
-            spare cycles solving algorithmic problems and lifting heavy things.
-            IIT Kharagpur, Mathematics &amp; Computing.
+            Backend by day, contest problems by night.
           </p>
 
           <div class="hero__actions reveal">
@@ -144,28 +130,20 @@
               </svg>
             </a>
             <a class="btn btn--ghost" href="#contact">Contact Me</a>
-          </div>
-
-          <!-- data-todo="resume" — drop your PDF at assets/resume.pdf -->
-          <p class="hero__resume reveal" data-todo="resume">
-            <a class="link-quiet" href="assets/resume.pdf" download>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
+            <!-- data-todo="resume" — drop your PDF at assets/resume.pdf -->
+            <a class="btn btn--quiet" href="assets/resume.pdf" download data-todo="resume">
+              <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 3v12M7 11l5 5 5-5M5 21h14" />
               </svg>
-              Download résumé (PDF)
+              Résumé
             </a>
-          </p>
+          </div>
         </div>
 
         <div class="hero__media reveal">
           <div class="avatar">
-            <!--
-              Above the fold, so it is eagerly loaded and prioritised for LCP.
-              width/height match the file and reserve the box against layout
-              shift; the CSS sizes it responsively from there.
-              (The .avatar__initials fallback still exists in style.css if the
-              photo is ever removed.)
-            -->
+            <!-- Above the fold: eager + high priority for LCP. width/height
+                 reserve the box; the CSS sizes it responsively from there. -->
             <img
               class="avatar__img"
               src="assets/profile.jpg"
@@ -186,42 +164,30 @@
       <div class="container">
         <header class="section__head reveal">
           <span class="section__num">01</span>
-          <h2 class="section__title">About Me</h2>
+          <h2 class="section__title">About</h2>
         </header>
 
         <div class="about">
           <div class="about__text reveal">
-            <p>
-              I graduated from <strong>IIT Kharagpur</strong> with an integrated
-              M.Sc in Mathematics &amp; Computing, which is a long way of saying
-              I spent five years learning how to think about problems before
-              writing code for them. These days I'm a Software Engineer at
-              <strong>Walmart Global Tech</strong> in Bengaluru, where I work on
-              systems that have to be correct at a scale where "mostly correct"
-              is not a thing.
+            <p class="about__lead">
+              I studied <strong>Mathematics &amp; Computing at IIT Kharagpur</strong>,
+              and now build backend systems at <strong>Walmart Global Tech</strong>
+              — at a scale where "mostly correct" isn't a thing.
             </p>
             <p>
-              <strong>Competitive programming</strong> is what got me here. It's
-              still the habit I'm least likely to drop — there's something
-              clarifying about a problem that either passes every test case or
-              doesn't. Outside of that, you'll find me in the
-              <strong>gym</strong>, chasing a number on a barbell with roughly
-              the same stubbornness I bring to a failing submission.
+              Competitive programming got me here and I still haven't dropped the
+              habit. The rest of my time goes to the gym.
             </p>
           </div>
 
           <ul class="about__facts reveal">
             <li>
-              <span class="about__label">Currently</span>
-              <span class="about__value">SWE @ Walmart Global Tech</span>
+              <span class="about__label">Now</span>
+              <span class="about__value">SWE, Walmart Global Tech</span>
             </li>
             <li>
-              <span class="about__label">Based in</span>
+              <span class="about__label">Based</span>
               <span class="about__value">Bengaluru, India</span>
-            </li>
-            <li>
-              <span class="about__label">Studied</span>
-              <span class="about__value">M.Sc Maths &amp; Computing, IIT KGP</span>
             </li>
             <li>
               <span class="about__label">Focus</span>
@@ -243,16 +209,14 @@
         <ol class="timeline">
           <li class="timeline__item reveal">
             <div class="timeline__marker" aria-hidden="true"></div>
-            <div class="timeline__card">
-              <p class="timeline__date">Aug 2025 — Present</p>
-              <h3 class="timeline__role">Software Engineer</h3>
+            <div class="card timeline__card">
+              <div class="timeline__top">
+                <h3 class="timeline__role">Software Engineer</h3>
+                <p class="timeline__date">Aug 2025 — Present</p>
+              </div>
               <p class="timeline__org">
                 Walmart Global Tech
-                <span class="timeline__loc">· Bengaluru, India</span>
-              </p>
-              <p class="timeline__desc">
-                Building and maintaining backend services as part of the
-                engineering org.
+                <span class="timeline__loc">· Bengaluru</span>
               </p>
               <ul class="tags">
                 <li class="tag">Java</li>
@@ -264,13 +228,14 @@
 
           <li class="timeline__item reveal">
             <div class="timeline__marker" aria-hidden="true"></div>
-            <div class="timeline__card">
-              <p class="timeline__date">May 2024 — Jul 2024</p>
-              <h3 class="timeline__role">Software Development Intern</h3>
-              <p class="timeline__org">Walmart</p>
-              <p class="timeline__desc">
-                Summer internship on the software development team, which led to
-                a full-time return offer.
+            <div class="card timeline__card">
+              <div class="timeline__top">
+                <h3 class="timeline__role">Software Development Intern</h3>
+                <p class="timeline__date">May — Jul 2024</p>
+              </div>
+              <p class="timeline__org">
+                Walmart
+                <span class="timeline__loc">· converted to a full-time offer</span>
               </p>
               <ul class="tags">
                 <li class="tag">Java</li>
@@ -288,34 +253,34 @@
         <header class="section__head reveal">
           <span class="section__num">03</span>
           <h2 class="section__title">Competitive Programming</h2>
-          <p class="section__sub">
-            Years of contests, a lot of wrong answers on test 2, and a genuine
-            love for the problems.
-          </p>
         </header>
 
-        <div class="cp-grid">
-          <a
-            class="cp-card reveal"
-            href="https://codeforces.com/profile/yash_laxkar1"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="cp-card__top">
-              <span class="cp-card__platform">Codeforces</span>
-              <span class="badge badge--cf">Specialist</span>
-            </div>
-            <p class="cp-card__rating"><span>1518</span><small>peak</small></p>
-            <p class="cp-card__handle">yash_laxkar1</p>
+        <a
+          class="card cp-card reveal"
+          href="https://codeforces.com/profile/yash_laxkar1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="cp-card__id">
+            <span class="cp-card__platform">Codeforces</span>
+            <span class="cp-card__handle">yash_laxkar1</span>
+          </div>
+
+          <div class="cp-card__stat">
+            <span class="cp-card__rating">1518</span>
+            <span class="cp-card__label">peak rating</span>
+          </div>
+
+          <div class="cp-card__end">
+            <span class="badge badge--cf">Specialist</span>
             <span class="cp-card__cta">
               View profile
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M7 17 17 7M9 7h8v8" />
               </svg>
             </span>
-          </a>
-
-        </div>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -325,7 +290,6 @@
         <header class="section__head reveal">
           <span class="section__num">04</span>
           <h2 class="section__title">Projects</h2>
-          <p class="section__sub">Things I'm building outside of work hours.</p>
         </header>
 
         <div class="projects">
@@ -333,7 +297,7 @@
             ============================================================
             PROJECT CARD TEMPLATE — copy this whole <article> to add one
             ============================================================
-            <article class="project reveal">
+            <article class="card project reveal">
               <div class="project__head">
                 <svg class="project__icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M4 7h16M4 12h16M4 17h10" />
@@ -341,22 +305,18 @@
                 <span class="project__status">In progress</span>
               </div>
               <h3 class="project__title">Project name</h3>
-              <p class="project__desc">
-                One or two sentences: what it does and why you built it.
-              </p>
+              <p class="project__desc">One sentence on what it does.</p>
               <ul class="tags">
-                <li class="tag">Tech</li>
                 <li class="tag">Tech</li>
               </ul>
               <div class="project__links">
                 <a href="#" target="_blank" rel="noopener noreferrer">Code</a>
-                <a href="#" target="_blank" rel="noopener noreferrer">Live</a>
               </div>
             </article>
             ============================================================
           -->
 
-          <article class="project reveal" data-todo="project">
+          <article class="card project reveal" data-todo="project">
             <div class="project__head">
               <svg class="project__icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M3 17l5-6 4 3 5-7 4 4" />
@@ -366,11 +326,8 @@
             </div>
             <h3 class="project__title">Swing-Trading Signal App</h3>
             <p class="project__desc">
-              A personal signal engine that combines technical indicators,
-              market sentiment and order-book depth to surface swing-trade
-              candidates.
-              <em class="todo">TODO: describe the approach, data sources and
-              what you've learned from running it.</em>
+              Technical indicators, market sentiment and order-book depth,
+              combined into swing-trade signals.
             </p>
             <ul class="tags">
               <li class="tag">Python</li>
@@ -378,12 +335,12 @@
               <li class="tag">Market Data</li>
             </ul>
             <div class="project__links">
-              <!-- TODO: add repo / demo links, or delete this block -->
-              <span class="project__links-todo">Links coming soon</span>
+              <!-- TODO: add repo / demo links -->
+              <span class="project__soon">Write-up coming soon</span>
             </div>
           </article>
 
-          <article class="project reveal" data-todo="project">
+          <article class="card project reveal" data-todo="project">
             <div class="project__head">
               <svg class="project__icon" viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="6" y="2" width="12" height="20" rx="2" />
@@ -391,43 +348,17 @@
               </svg>
               <span class="project__status">Planned</span>
             </div>
-            <h3 class="project__title">Android App — Play Store</h3>
+            <h3 class="project__title">Android App</h3>
             <p class="project__desc">
-              An Android app I'm building with the goal of shipping it to the
-              Google Play Store.
-              <em class="todo">TODO: name the app, say what problem it solves,
-              and link the Play Store listing once it's live.</em>
+              An Android app in progress, headed for the Google Play Store.
             </p>
             <ul class="tags">
               <li class="tag">Android</li>
               <li class="tag">Kotlin</li>
             </ul>
             <div class="project__links">
-              <span class="project__links-todo">Links coming soon</span>
-            </div>
-          </article>
-
-          <article class="project reveal" data-todo="project">
-            <div class="project__head">
-              <svg class="project__icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3v18M3 12h18" />
-                <circle cx="12" cy="12" r="9" />
-              </svg>
-              <span class="project__status">Your turn</span>
-            </div>
-            <h3 class="project__title">Add your next project</h3>
-            <p class="project__desc">
-              <em class="todo">TODO: replace this card. There's a copy-paste
-              card template in an HTML comment just above the first project —
-              duplicate it as many times as you need, then delete this
-              placeholder.</em>
-            </p>
-            <ul class="tags">
-              <li class="tag">Tech</li>
-              <li class="tag">Tech</li>
-            </ul>
-            <div class="project__links">
-              <span class="project__links-todo">—</span>
+              <!-- TODO: add Play Store / repo links -->
+              <span class="project__soon">Write-up coming soon</span>
             </div>
           </article>
         </div>
@@ -442,40 +373,45 @@
           <h2 class="section__title">Skills</h2>
         </header>
 
-        <div class="skills">
-          <div class="skills__group reveal">
-            <h3 class="skills__label">Languages</h3>
-            <ul class="chips">
-              <li class="chip">C</li>
-              <li class="chip">C++</li>
-              <li class="chip">Python</li>
-              <li class="chip">Java</li>
-            </ul>
+        <dl class="skills reveal">
+          <div class="skills__row">
+            <dt class="skills__label">Languages</dt>
+            <dd>
+              <ul class="chips">
+                <li class="chip">C</li>
+                <li class="chip">C++</li>
+                <li class="chip">Python</li>
+                <li class="chip">Java</li>
+              </ul>
+            </dd>
           </div>
-
-          <div class="skills__group reveal">
-            <h3 class="skills__label">Frameworks</h3>
-            <ul class="chips">
-              <li class="chip">Spring Boot</li>
-              <li class="chip">React.js</li>
-            </ul>
+          <div class="skills__row">
+            <dt class="skills__label">Frameworks</dt>
+            <dd>
+              <ul class="chips">
+                <li class="chip">Spring Boot</li>
+                <li class="chip">React.js</li>
+              </ul>
+            </dd>
           </div>
-
-          <div class="skills__group reveal">
-            <h3 class="skills__label">Databases</h3>
-            <ul class="chips">
-              <li class="chip">PostgreSQL</li>
-              <li class="chip">MySQL</li>
-            </ul>
+          <div class="skills__row">
+            <dt class="skills__label">Data</dt>
+            <dd>
+              <ul class="chips">
+                <li class="chip">PostgreSQL</li>
+                <li class="chip">MySQL</li>
+              </ul>
+            </dd>
           </div>
-
-          <div class="skills__group reveal">
-            <h3 class="skills__label">Tools</h3>
-            <ul class="chips">
-              <li class="chip">Git</li>
-            </ul>
+          <div class="skills__row">
+            <dt class="skills__label">Tools</dt>
+            <dd>
+              <ul class="chips">
+                <li class="chip">Git</li>
+              </ul>
+            </dd>
           </div>
-        </div>
+        </dl>
       </div>
     </section>
 
@@ -487,47 +423,31 @@
           <h2 class="section__title">Education</h2>
         </header>
 
-        <!--
-          CGPA is intentionally not displayed, and the figure is deliberately
-          kept out of this repo. If you ever want it on the page, there's a
-          commented-out .edu__cgpa block at the end of section 13 in
-          css/style.css to pair with the markup.
-        -->
-        <div class="edu reveal">
-          <div class="edu__logo" data-todo="logo">
-            <!--
-              TODO: drop the institute logo at assets/iitkgp-logo.png (square,
-              256x256 or larger; a transparent PNG or an SVG works best), then
-              delete the .edu__logo-fallback div below and uncomment this:
-
-              <img
-                class="edu__logo-img"
-                src="assets/iitkgp-logo.png"
-                alt="Indian Institute of Technology Kharagpur logo"
-                width="76"
-                height="76"
-                loading="lazy"
-              />
-
-              If the logo has dark ink and disappears against the dark tile,
-              add the --light modifier: <div class="edu__logo edu__logo--light">
-            -->
-            <div class="edu__logo-fallback" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M3 10l9-5 9 5-9 5-9-5z" />
-                <path d="M7 12.5V18c0 1 2.2 2 5 2s5-1 5-2v-5.5" />
-                <path d="M21 10v5" />
-              </svg>
-            </div>
+        <!-- CGPA is intentionally not displayed, and the figure is deliberately
+             kept out of this repo. A commented-out .edu__cgpa block sits at the
+             end of section 13 in css/style.css if it is ever wanted back. -->
+        <div class="card edu reveal">
+          <!-- Light tile: the institute logo is dark navy and would vanish
+               against the dark card otherwise. -->
+          <div class="edu__logo edu__logo--light">
+            <img
+              class="edu__logo-img"
+              src="assets/iitkgp-logo.png"
+              alt="Indian Institute of Technology Kharagpur logo"
+              width="192"
+              height="192"
+              loading="lazy"
+            />
           </div>
 
           <div class="edu__main">
-            <h3 class="edu__school">Indian Institute of Technology Kharagpur</h3>
+            <h3 class="edu__school">IIT Kharagpur</h3>
             <p class="edu__degree">
-              M.Sc (5-year Integrated) — Mathematics &amp; Computing
+              M.Sc (5-year Integrated), Mathematics &amp; Computing
             </p>
-            <p class="edu__meta">Graduated 2025</p>
           </div>
+
+          <p class="edu__year">2025</p>
         </div>
       </div>
     </section>
@@ -541,32 +461,34 @@
         </header>
 
         <div class="hobbies">
-          <article class="hobby reveal">
+          <article class="card hobby reveal">
             <div class="hobby__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <path d="M6.5 6.5v11M17.5 6.5v11M4 9v6M20 9v6M6.5 12h11" />
               </svg>
             </div>
-            <h3 class="hobby__title">Gym &amp; Fitness</h3>
-            <p class="hobby__desc">
-              Progressive overload is just an optimisation problem with sore
-              shoulders. Lifting keeps me honest — the bar doesn't care how
-              clever your excuse is.
-            </p>
+            <div>
+              <h3 class="hobby__title">Gym &amp; Fitness</h3>
+              <p class="hobby__desc">
+                Progressive overload — an optimisation problem with sore
+                shoulders.
+              </p>
+            </div>
           </article>
 
-          <article class="hobby reveal">
+          <article class="card hobby reveal">
             <div class="hobby__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <path d="M8 6l-5 6 5 6M16 6l5 6-5 6M13 4l-2 16" />
               </svg>
             </div>
-            <h3 class="hobby__title">Competitive Programming</h3>
-            <p class="hobby__desc">
-              Weekend contests, a timer counting down, and that very specific
-              joy of a greedy solution that actually turns out to be correct.
-              Still chasing the next rating bracket.
-            </p>
+            <div>
+              <h3 class="hobby__title">Competitive Programming</h3>
+              <p class="hobby__desc">
+                Weekend contests, and the occasional greedy solution that turns
+                out to be correct.
+              </p>
+            </div>
           </article>
         </div>
       </div>
@@ -578,9 +500,8 @@
         <div class="contact reveal">
           <h2 class="contact__title">Let's build something</h2>
           <p class="contact__text">
-            I'm always up for a good conversation about backend systems, a
-            tricky algorithm, or a programming problem you can't stop thinking
-            about. My inbox is open.
+            Always up for a conversation about backend systems, or a problem you
+            can't stop thinking about.
           </p>
 
           <div class="contact__cta">
@@ -612,7 +533,11 @@
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/yash-laxkar-9b176420b/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com/in/yash-laxkar-9b176420b/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <rect x="3" y="3" width="18" height="18" rx="2" />
                   <path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4" />
@@ -621,7 +546,11 @@
               </a>
             </li>
             <li>
-              <a href="https://github.com/1244598" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/1244598"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     d="M9 19c-4 1.5-4-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 4.5-1.4 4.5-4.8a3.7 3.7 0 0 0-1-2.6 3.4 3.4 0 0 0-.1-2.6s-1.1-.3-3.5 1.3a9.4 9.4 0 0 0-5 0C7.1 3.6 6 3.9 6 3.9a3.4 3.4 0 0 0-.1 2.6 3.7 3.7 0 0 0-1 2.6c0 3.4 1.7 4.5 4.5 4.8-.6.6-.6 1.2-.5 2V21"
@@ -654,8 +583,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <p class="footer__copy">
-        © <span id="year">2026</span> Yash Laxkar. Built from scratch — no
-        templates, no frameworks.
+        © <span id="year">2026</span> Yash Laxkar
       </p>
       <a class="footer__top" href="#hero">
         Back to top

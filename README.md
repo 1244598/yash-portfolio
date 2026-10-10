@@ -38,7 +38,6 @@ it — search for `data-todo="..."`:
 | Search for | What to change |
 |-----------|----------------|
 | `data-todo="resume"` | Add `assets/resume.pdf` (link is already wired) |
-| `data-todo="logo"` | Add `assets/iitkgp-logo.png`, then swap in the `<img>` |
 | `data-todo="project"` | Project titles, descriptions, tech tags, links |
 | `data-todo="meta"` | `og:url` and `og:image` for social previews |
 

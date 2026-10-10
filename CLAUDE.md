@@ -52,9 +52,19 @@ Build a polished, modern, **static** personal portfolio website for Yash Laxkar 
 ## Placeholders (do NOT invent real data)
 Use obvious placeholders and list them in a `TODO` comment at the top of `index.html`:
 - Resume PDF link (`assets/resume.pdf`)
-- Institute logo (`assets/iitkgp-logo.png`)
 - Project descriptions and links
 - Any facts not listed in this file
+
+## Tone and density (owner feedback, 2026-10-11)
+The first build was called "dull" with "too much text". Keep it that way:
+- **Short copy.** One-line descriptions. No three-sentence paragraphs anywhere
+  except the About lead. Cut filler like "as part of the engineering org".
+- **Dense layout.** Compact section headers (number + title + hairline on one
+  line), not stacked blocks with subtitles. No screen-height gaps.
+- **Visible contrast.** Cards need readable borders and a top highlight; the
+  page uses a dot-grid texture and an accent wash, not flat black.
+- No amber "TODO" boxes on the rendered page — placeholders should look
+  intentional, not broken.
 
 Never fabricate achievements, metrics, employers, or links.
 
