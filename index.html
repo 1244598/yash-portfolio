@@ -16,19 +16,24 @@
   2. RESUME  (search: data-todo="resume")
      - Drop your PDF at assets/resume.pdf. The link is already wired up.
 
-  3. PROFILE PHOTO  (search: data-todo="photo")
+  3. COLLEGE LOGO  (search: data-todo="logo")
+     - Drop the institute logo at assets/iitkgp-logo.png, then swap the
+       fallback icon for the commented-out <img> tag right above it.
+       A styled fallback icon shows until you do.
+
+  4. PROFILE PHOTO  (search: data-todo="photo")
      - Drop a square photo at assets/profile.jpg, then swap the initials
        avatar for the commented-out <img> tag right above it.
 
-  4. PROJECTS  (search: data-todo="project")
+  5. PROJECTS  (search: data-todo="project")
      - Three placeholder cards. Replace titles, descriptions, tech tags and
        links. A copy-paste card template is included as an HTML comment.
 
-  5. OPEN GRAPH / SEO  (search: data-todo="meta")
+  6. OPEN GRAPH / SEO  (search: data-todo="meta")
      - og:url and og:image expect the final deployed URL. Update after
        deploying, and add assets/og-image.png (1200x630) for link previews.
 
-  6. SOCIAL PREVIEW IMAGE
+  7. SOCIAL PREVIEW IMAGE
      - assets/og-image.png does not exist yet. Links will still work, they
        just won't show a preview card until you add it.
 
@@ -510,17 +515,45 @@
           <h2 class="section__title">Education</h2>
         </header>
 
+        <!--
+          CGPA is intentionally not displayed. For the record it is 7.98/10 —
+          if you ever want it on the page, there's a commented-out .edu__cgpa
+          block at the end of section 13 in css/style.css to pair with it.
+        -->
         <div class="edu reveal">
+          <div class="edu__logo" data-todo="logo">
+            <!--
+              TODO: drop the institute logo at assets/iitkgp-logo.png (square,
+              256x256 or larger; a transparent PNG or an SVG works best), then
+              delete the .edu__logo-fallback div below and uncomment this:
+
+              <img
+                class="edu__logo-img"
+                src="assets/iitkgp-logo.png"
+                alt="Indian Institute of Technology Kharagpur logo"
+                width="76"
+                height="76"
+                loading="lazy"
+              />
+
+              If the logo has dark ink and disappears against the dark tile,
+              add the --light modifier: <div class="edu__logo edu__logo--light">
+            -->
+            <div class="edu__logo-fallback" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 10l9-5 9 5-9 5-9-5z" />
+                <path d="M7 12.5V18c0 1 2.2 2 5 2s5-1 5-2v-5.5" />
+                <path d="M21 10v5" />
+              </svg>
+            </div>
+          </div>
+
           <div class="edu__main">
             <h3 class="edu__school">Indian Institute of Technology Kharagpur</h3>
             <p class="edu__degree">
               M.Sc (5-year Integrated) — Mathematics &amp; Computing
             </p>
             <p class="edu__meta">Graduated 2025</p>
-          </div>
-          <div class="edu__cgpa">
-            <span class="edu__cgpa-value">7.77</span>
-            <span class="edu__cgpa-scale">/ 10 CGPA</span>
           </div>
         </div>
       </div>
