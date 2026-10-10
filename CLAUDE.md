@@ -35,8 +35,9 @@ Build a polished, modern, **static** personal portfolio website for Yash Laxkar 
    - Leave an easy-to-copy card template with a comment so more projects can be added.
 6. **Skills**: Grouped chips: C/C++, Python, Java (Spring Boot), React.js, PostgreSQL/MySQL, Git.
 7. **Education**: IIT Kharagpur, M.Sc (5-year integrated) in Mathematics & Computing, 2025.
-   Show the institute logo next to the name. CGPA is **7.98/10** but is deliberately
-   **not displayed** on the page — do not add it back unless asked.
+   Show the institute logo next to the name. **Do not display CGPA** anywhere on the
+   page, and do not record the figure in this repo (it is a public repo) — not in
+   markup, not in comments, not here. Do not add it back unless asked.
 8. **Hobbies / Beyond Code**: Gym and fitness, competitive programming. Keep the tone personal and a little playful. Use icon-style cards.
 9. **Contact**: Email, LinkedIn, GitHub, Codeforces, CodeChef links. Use `mailto:` for email. No backend form (a simple "Say hello" email button is enough).
 10. **Footer**: Copyright line and a back-to-top link.
