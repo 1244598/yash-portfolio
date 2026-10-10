@@ -17,7 +17,12 @@ Build a polished, modern, **static** personal portfolio website for Yash Laxkar 
 - Add proper `<title>`, meta description, and Open Graph tags.
 
 ## Design direction
-- **Dark theme** with one accent color (default: electric blue `#4f8cff`, easy to change via a CSS variable).
+- **Dark theme**. The accent is **warm amber** (`--accent-rgb: 255 138 76`) — the owner
+  asked for less blue, since an all-blue page read as dull. Every tint, glow and
+  gradient derives from `--accent-rgb` / `--accent-2-rgb`, so re-theming is two lines.
+- Keep the ambient motion layer (drifting aurora + film grain + cursor spotlight on
+  cards + count-up on the rating). It is what stops the dark background reading flat.
+  All of it must stay behind `prefers-reduced-motion`.
 - Define all colors, spacing, and fonts as CSS custom properties in `:root` so the theme is easy to tweak.
 - Clean, modern, minimal layout with generous whitespace. It should look genuinely premium, not like a template.
 - Pick a distinctive font pairing (e.g. a geometric sans for headings plus a readable body font). Avoid generic defaults.
@@ -35,7 +40,8 @@ Build a polished, modern, **static** personal portfolio website for Yash Laxkar 
    - Leave an easy-to-copy card template with a comment so more projects can be added.
 6. **Skills**: Grouped chips: C/C++, Python, Java (Spring Boot), React.js, PostgreSQL/MySQL, Git.
 7. **Education**: IIT Kharagpur, M.Sc (5-year integrated) in Mathematics & Computing, 2025.
-   Show the institute logo next to the name. **Do not display CGPA** anywhere on the
+   Show the campus photo (`assets/iitkgp-campus.jpg`) in the card, with the
+   photographer credit kept visible. **Do not display CGPA** anywhere on the
    page, and do not record the figure in this repo (it is a public repo) — not in
    markup, not in comments, not here. Do not add it back unless asked.
 8. **Hobbies / Beyond Code**: Gym and fitness, competitive programming. Keep the tone personal and a little playful. Use icon-style cards.

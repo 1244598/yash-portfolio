@@ -5,9 +5,9 @@ render — the page has fallbacks — but each file below unlocks something.
 
 | File | What it does | Recommended |
 |------|--------------|-------------|
+| `iitkgp-campus.jpg` | Photo in the Education card. **Already added** (900×600). | 3:2 landscape |
 | `profile.jpg` | Hero portrait. **Already added** (600×600, cropped from the original). | Square, 600×600+ |
 | `resume.pdf` | Wires up the "Download résumé" link in the hero. | — |
-| `iitkgp-logo.png` | Logo beside the college name in Education. **Already added** (192×192, transparent). | — |
 | `og-image.png` | Preview card when the site is shared on LinkedIn/X/WhatsApp. | 1200×630 |
 | `favicon.svg` | Browser tab icon. **Already included.** | — |
 
@@ -21,13 +21,12 @@ If you swap in a non-square image, crop it to a square first, or
 `object-fit: cover` will centre-crop it for you (which may cut off a face
 that isn't centred).
 
-## About the institute logo
+## About the campus photo
 
-`iitkgp-logo.png` came from the Wikipedia article on IIT Kharagpur, where it
-is published under a **fair use** claim — it is the institute's trademark,
-not public-domain artwork. Using it to show where you studied is ordinary
-nominative use, the same as putting it on a CV. Swap or drop it if you'd
-rather not carry it.
+`iitkgp-campus.jpg` is a photograph of the IIT Kharagpur main building,
+credited on the page to **Himanshu Bali** (the name is watermarked on the
+original). It is someone else's copyrighted work, used here with a visible
+credit. If you don't have permission for it, replace the file with your own
+photo of campus — the markup and styling need no changes.
 
-It sits on a near-white tile (`.edu__logo--light`) because the mark is dark
-navy and disappears against the dark card.
+Keep `.edu__credit` in `index.html` for as long as you keep this photo.

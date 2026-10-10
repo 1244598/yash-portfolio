@@ -16,8 +16,10 @@
   Everything else is real, verified content. Never add achievements, metrics
   or links that aren't yours.
 
-  NOTE: the IIT Kharagpur logo in Education is used under fair use to show
-  where the site's owner studied. It is the institute's trademark.
+  NOTE: assets/iitkgp-campus.jpg is a third-party photograph of the IIT
+  Kharagpur main building, credited on the page to Himanshu Bali. If you
+  don't have permission to use it, swap in your own photo — the markup
+  and styling stay the same.
   ============================================================================
 -->
 <head>
@@ -66,6 +68,11 @@
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Ambient background: drifting colour fields + film grain.
+       Decorative only, and fully disabled under prefers-reduced-motion. -->
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="grain" aria-hidden="true"></div>
 
   <!-- ===================== NAVBAR ===================== -->
   <header class="nav" id="nav">
@@ -267,7 +274,7 @@
           </div>
 
           <div class="cp-card__stat">
-            <span class="cp-card__rating">1518</span>
+            <span class="cp-card__rating" data-countup="1518">1518</span>
             <span class="cp-card__label">peak rating</span>
           </div>
 
@@ -427,27 +434,26 @@
              kept out of this repo. A commented-out .edu__cgpa block sits at the
              end of section 13 in css/style.css if it is ever wanted back. -->
         <div class="card edu reveal">
-          <!-- Light tile: the institute logo is dark navy and would vanish
-               against the dark card otherwise. -->
-          <div class="edu__logo edu__logo--light">
+          <figure class="edu__photo">
             <img
-              class="edu__logo-img"
-              src="assets/iitkgp-logo.png"
-              alt="Indian Institute of Technology Kharagpur logo"
-              width="192"
-              height="192"
+              src="assets/iitkgp-campus.jpg"
+              alt="The main building at IIT Kharagpur at sunset"
+              width="900"
+              height="600"
               loading="lazy"
+              decoding="async"
             />
-          </div>
+            <!-- Photographer credit. Keep this if you keep the photo. -->
+            <figcaption class="edu__credit">Photo: Himanshu Bali</figcaption>
+          </figure>
 
-          <div class="edu__main">
+          <div class="edu__body">
+            <p class="edu__year">2025</p>
             <h3 class="edu__school">IIT Kharagpur</h3>
             <p class="edu__degree">
               M.Sc (5-year Integrated), Mathematics &amp; Computing
             </p>
           </div>
-
-          <p class="edu__year">2025</p>
         </div>
       </div>
     </section>

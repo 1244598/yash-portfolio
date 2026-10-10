@@ -1,11 +1,14 @@
 /* ==========================================================================
    Yash Laxkar — Portfolio
    --------------------------------------------------------------------------
-   Four small jobs:
+   Jobs:
      1. Mobile menu toggle
      2. Active-section highlighting in the navbar
      3. Scroll-reveal animations
      4. Navbar shadow on scroll + current year in the footer
+     5. Cursor spotlight on cards
+     6. Count-up for the rating stat
+     7. Smooth-scroll fallback where CSS scroll-behavior is missing
    No dependencies. Runs after the DOM is parsed (script is at end of <body>).
    ========================================================================== */
 
@@ -174,7 +177,72 @@
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
   /* ------------------------------------------------------------------
-     5. SMOOTH-SCROLL FALLBACK
+     5. CARD SPOTLIGHT
+     Writes the pointer position onto the card as --mx/--my, which the
+     CSS uses to place a radial highlight. Skipped for reduced motion and
+     for coarse pointers, where there is no hover to track.
+     ------------------------------------------------------------------ */
+  var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  if (finePointer && !prefersReducedMotion) {
+    document.querySelectorAll(".card").forEach(function (card) {
+      card.addEventListener(
+        "pointermove",
+        function (event) {
+          var r = card.getBoundingClientRect();
+          card.style.setProperty("--mx", event.clientX - r.left + "px");
+          card.style.setProperty("--my", event.clientY - r.top + "px");
+        },
+        { passive: true }
+      );
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     6. COUNT-UP
+     Animates [data-countup] from 0 to its value the first time it is
+     seen. The real number is already in the HTML, so it stays correct
+     with JS off or reduced motion on.
+     ------------------------------------------------------------------ */
+  var counters = document.querySelectorAll("[data-countup]");
+
+  if (counters.length && !prefersReducedMotion && "IntersectionObserver" in window) {
+    var countObserver = new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          observer.unobserve(entry.target);
+
+          var el = entry.target;
+          var target = parseInt(el.getAttribute("data-countup"), 10);
+          if (isNaN(target)) return;
+
+          var duration = 1100;
+          var started = null;
+
+          var tick = function (now) {
+            if (started === null) started = now;
+            var t = Math.min((now - started) / duration, 1);
+            // ease-out cubic, so it decelerates into the final value
+            var eased = 1 - Math.pow(1 - t, 3);
+            el.textContent = String(Math.round(target * eased));
+            if (t < 1) requestAnimationFrame(tick);
+            else el.textContent = String(target);
+          };
+
+          requestAnimationFrame(tick);
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    counters.forEach(function (el) {
+      countObserver.observe(el);
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     7. SMOOTH-SCROLL FALLBACK
      Only needed where CSS scroll-behavior isn't supported (older
      Safari). Modern browsers take the CSS path and skip this entirely.
      ------------------------------------------------------------------ */
