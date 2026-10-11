@@ -48,9 +48,17 @@ amber box, so it's obvious what's unfinished. Those boxes come from the
 
 ### Adding a project
 
-There's a copy-paste `<article>` template in an HTML comment just above the
-first project card in the Projects section. Duplicate it, fill it in, and
-delete the third "Add your next project" placeholder card.
+Each project card is a native `<details>` element: the `<summary>` is the
+collapsed card, and the `.pd` block after it is the panel that expands in
+place when you click it. Nothing navigates away, and clicking again closes it.
+
+There's a copy-paste template in an HTML comment just above the first card.
+Duplicate the whole `<details>` block and fill it in.
+
+Because it's `<details>`, it still opens and closes with JavaScript disabled —
+`js/main.js` only adds the height animation on top. The `name="project"`
+attribute on each card is what makes opening one close the others; drop it if
+you'd rather have several open at once.
 
 ### Adding a skill
 

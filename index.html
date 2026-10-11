@@ -25,29 +25,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yash Laxkar — Software Engineer</title>
+  <title>Yash Laxkar — Software Engineer II</title>
   <meta
     name="description"
-    content="Yash Laxkar — Software Engineer at Walmart Global Tech, IIT Kharagpur graduate, and competitive programmer. Codeforces Specialist, peak rating 1518."
+    content="Yash Laxkar — Software Engineer II at Walmart Global Tech, IIT Kharagpur graduate, and competitive programmer. Codeforces Specialist, peak rating 1518."
   />
   <meta name="author" content="Yash Laxkar" />
   <meta name="theme-color" content="#08090e" />
 
   <!-- Open Graph / social previews — data-todo="meta" -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Yash Laxkar — Software Engineer" />
+  <meta property="og:title" content="Yash Laxkar — Software Engineer II" />
   <meta
     property="og:description"
-    content="Software Engineer at Walmart Global Tech. IIT Kharagpur. Competitive programmer."
+    content="Software Engineer II at Walmart Global Tech. IIT Kharagpur. Competitive programmer."
   />
   <meta property="og:url" content="https://1244598.github.io/yash-portfolio/" />
   <!-- TODO: add assets/og-image.png (1200x630) -->
   <meta property="og:image" content="assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Yash Laxkar — Software Engineer" />
+  <meta name="twitter:title" content="Yash Laxkar — Software Engineer II" />
   <meta
     name="twitter:description"
-    content="Software Engineer at Walmart Global Tech. IIT Kharagpur. Competitive programmer."
+    content="Software Engineer II at Walmart Global Tech. IIT Kharagpur. Competitive programmer."
   />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -120,7 +120,7 @@
           </h1>
 
           <p class="hero__tagline reveal">
-            Software Engineer at <strong>Walmart Global Tech</strong>
+            Software Engineer II at <strong>Walmart Global Tech</strong>
             <span class="hero__sep" aria-hidden="true"></span>
             Competitive Programmer
           </p>
@@ -190,7 +190,7 @@
           <ul class="about__facts reveal">
             <li>
               <span class="about__label">Now</span>
-              <span class="about__value">SWE, Walmart Global Tech</span>
+              <span class="about__value">SWE II, Walmart Global Tech</span>
             </li>
             <li>
               <span class="about__label">Based</span>
@@ -218,7 +218,7 @@
             <div class="timeline__marker" aria-hidden="true"></div>
             <div class="card timeline__card">
               <div class="timeline__top">
-                <h3 class="timeline__role">Software Engineer</h3>
+                <h3 class="timeline__role">Software Engineer II</h3>
                 <p class="timeline__date">Aug 2025 — Present</p>
               </div>
               <p class="timeline__org">
@@ -228,7 +228,12 @@
               <ul class="tags">
                 <li class="tag">Java</li>
                 <li class="tag">Spring Boot</li>
-                <li class="tag">Backend</li>
+                <li class="tag">Python</li>
+                <li class="tag">Kafka</li>
+                <li class="tag">Redis</li>
+                <li class="tag">Guava Cache</li>
+                <li class="tag">Docker</li>
+                <li class="tag">Kubernetes</li>
               </ul>
             </div>
           </li>
@@ -302,72 +307,305 @@
         <div class="projects">
           <!--
             ============================================================
-            PROJECT CARD TEMPLATE — copy this whole <article> to add one
-            ============================================================
-            <article class="card project reveal">
-              <div class="project__head">
-                <svg class="project__icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 7h16M4 12h16M4 17h10" />
-                </svg>
-                <span class="project__status">In progress</span>
-              </div>
-              <h3 class="project__title">Project name</h3>
-              <p class="project__desc">One sentence on what it does.</p>
-              <ul class="tags">
-                <li class="tag">Tech</li>
-              </ul>
-              <div class="project__links">
-                <a href="#" target="_blank" rel="noopener noreferrer">Code</a>
-              </div>
-            </article>
+            PROJECT CARD TEMPLATE — copy one <details> block to add one.
+            The <summary> is the collapsed card; .pd is the panel that
+            expands in place when it is clicked. Native <details> means
+            this still opens and closes with JavaScript disabled.
             ============================================================
           -->
 
-          <article class="card project reveal" data-todo="project">
-            <div class="project__head">
-              <svg class="project__icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M3 17l5-6 4 3 5-7 4 4" />
-                <path d="M3 21h18" />
-              </svg>
-              <span class="project__status">In progress</span>
-            </div>
-            <h3 class="project__title">Swing-Trading Signal App</h3>
-            <p class="project__desc">
-              Technical indicators, market sentiment and order-book depth,
-              combined into swing-trade signals.
-            </p>
-            <ul class="tags">
-              <li class="tag">Python</li>
-              <li class="tag">PostgreSQL</li>
-              <li class="tag">Market Data</li>
-            </ul>
-            <div class="project__links">
-              <!-- TODO: add repo / demo links -->
-              <span class="project__soon">Write-up coming soon</span>
-            </div>
-          </article>
+          <details class="card project" name="project">
+            <summary class="project__summary">
+              <span class="project__head">
+                <svg class="project__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 17l5-6 4 3 5-7 4 4" />
+                  <path d="M3 21h18" />
+                </svg>
+                <span class="project__status">Building</span>
+              </span>
+              <h3 class="project__title">Swing-Trading Signal System</h3>
+              <p class="project__desc">
+                An Android app that scores Indian equities BUY / HOLD / SELL from
+                live market data, backed by a Spring Boot service that supplies
+                the news-sentiment layer.
+              </p>
+              <ul class="tags">
+                <li class="tag">Kotlin</li>
+                <li class="tag">Compose</li>
+                <li class="tag">Spring Boot</li>
+                <li class="tag">PostgreSQL</li>
+              </ul>
+              <span class="project__more">
+                <span class="project__more-open">Read more</span>
+                <span class="project__more-close">Show less</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+              </span>
+            </summary>
 
-          <article class="card project reveal" data-todo="project">
-            <div class="project__head">
-              <svg class="project__icon" viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="6" y="2" width="12" height="20" rx="2" />
-                <path d="M11 18h2" />
-              </svg>
-              <span class="project__status">Planned</span>
+            <div class="pd">
+              <p class="pd__lead">
+                Swing trades are held for days to weeks, so the decision rests on
+                price action, order-book pressure and the news all at once. I
+                wanted one number I could argue with rather than a black box — so
+                the app shows the verdict <em>and</em> every input underneath it.
+              </p>
+
+              <div class="pd__block">
+                <h4 class="pd__h">How the signal works</h4>
+                <p>
+                  Three layers combine into a score from −100 to +100, which maps
+                  to a verdict and a confidence value.
+                </p>
+                <ul class="pd__layers">
+                  <li><span class="pd__w">45%</span> <strong>Technicals</strong> — RSI against its midpoint, price against SMA-50, and SMA-20 against SMA-50, each scaled and clamped, computed from live candles.</li>
+                  <li><span class="pd__w">35%</span> <strong>Sentiment</strong> — FinBERT over Indian financial news.</li>
+                  <li><span class="pd__w">20%</span> <strong>Order-book depth</strong> — buy/sell pressure, which can <strong>veto</strong> a signal outright even when the weighted score is strong.</li>
+                </ul>
+              </div>
+
+              <div class="pd__block">
+                <h4 class="pd__h">Android app</h4>
+                <p>
+                  Kotlin and Jetpack Compose, MVVM with <code>StateFlow</code> and
+                  unidirectional data flow. Live quotes and the full order book on
+                  a 20-second poll, a WebSocket price stream sampled to 1&nbsp;s,
+                  charts drawn on Compose Canvas, and an on-disk candle cache so a
+                  cold start doesn't refetch history for fifty stocks. Dependency
+                  injection is done by hand — one container picks the
+                  implementations — because Hilt was more machinery than a
+                  single-user app needed.
+                </p>
+              </div>
+
+              <div class="pd__block">
+                <h4 class="pd__h">Sentiment backend</h4>
+                <p>
+                  Spring Boot and Java with a small Python FastAPI service for the
+                  model, Postgres behind Flyway, the whole thing shipped as Docker
+                  Compose. It polls six Indian financial-news RSS feeds, matches
+                  each headline against roughly 2,700 NSE instruments, scores it
+                  with FinBERT and stores it permanently with its timestamp.
+                  Windows from 30 minutes to a month are re-aggregations of those
+                  stored scores, computed on demand rather than precomputed.
+                </p>
+              </div>
+
+              <div class="pd__block">
+                <h4 class="pd__h">Decisions I'd defend</h4>
+                <ul class="pd__list">
+                  <li><strong>News and crowd sentiment are never blended.</strong> They are two readings, always. When they disagree, that disagreement is itself information.</li>
+                  <li><strong>Every percentage travels with its item count</strong>, and below five items the reading is withheld entirely — "70% of 2 articles" is noise dressed as a number.</li>
+                  <li><strong>Baselines are per stock.</strong> A stock that always reads 60% bullish is not bullish news, so each reading carries its own historical normal and how many standard deviations it sits from it.</li>
+                  <li><strong>The model stayed in Python.</strong> Running FinBERT from Java meant an ONNX export and a hand-ported tokenizer; one HTTP endpoint was the cheaper boundary.</li>
+                  <li><strong>Failures surface instead of degrading quietly.</strong> A chart that can't load shows an error — a sample chart next to a live price is worse than no chart.</li>
+                </ul>
+              </div>
+
+              <div class="pd__block">
+                <h4 class="pd__h">Where it stands</h4>
+                <p>
+                  Technicals, depth, charts and the live price stream all run on
+                  real broker data. The sentiment service is mid-build; until it
+                  is hosted somewhere the phone can reach, the app labels that
+                  layer as sample data in the UI rather than quietly faking it.
+                </p>
+              </div>
+
+              <ul class="tags pd__tags">
+                <li class="tag">Kotlin</li>
+                <li class="tag">Jetpack Compose</li>
+                <li class="tag">Java</li>
+                <li class="tag">Spring Boot</li>
+                <li class="tag">Python</li>
+                <li class="tag">FastAPI</li>
+                <li class="tag">PostgreSQL</li>
+                <li class="tag">FinBERT</li>
+                <li class="tag">Docker</li>
+              </ul>
             </div>
-            <h3 class="project__title">Android App</h3>
-            <p class="project__desc">
-              An Android app in progress, headed for the Google Play Store.
-            </p>
-            <ul class="tags">
-              <li class="tag">Android</li>
-              <li class="tag">Kotlin</li>
-            </ul>
-            <div class="project__links">
-              <!-- TODO: add Play Store / repo links -->
-              <span class="project__soon">Write-up coming soon</span>
+          </details>
+
+          <details class="card project" name="project">
+            <summary class="project__summary">
+              <span class="project__head">
+                <svg class="project__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="6" y="2" width="12" height="20" rx="2" />
+                  <path d="M11 18h2" />
+                </svg>
+                <span class="project__status">Play Store</span>
+              </span>
+              <h3 class="project__title">Kharcha — Expense Manager</h3>
+              <p class="project__desc">
+                An offline-first Android app for tracking day-to-day spending
+                against a monthly budget. No backend, no accounts, no network.
+              </p>
+              <ul class="tags">
+                <li class="tag">Kotlin</li>
+                <li class="tag">Compose</li>
+                <li class="tag">Room</li>
+              </ul>
+              <span class="project__more">
+                <span class="project__more-open">Read more</span>
+                <span class="project__more-close">Show less</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+              </span>
+            </summary>
+
+            <div class="pd">
+              <p class="pd__lead">
+                A personal expense manager for everyday rupee spending: log what
+                you spent, see how you're pacing against the month's budget, and
+                find out where the money actually went.
+              </p>
+
+              <div class="pd__block">
+                <h4 class="pd__h">The constraint that shaped it</h4>
+                <p>
+                  <strong>Entirely offline, with no backend at all</strong> — no
+                  servers, no sync, no accounts, no third-party APIs. Everything
+                  lives on the device. That keeps running cost at zero, and it
+                  means the privacy question answers itself: spending data never
+                  leaves the phone, so there is nothing to breach.
+                </p>
+              </div>
+
+              <div class="pd__block">
+                <h4 class="pd__h">How it's built</h4>
+                <p>
+                  Kotlin with Jetpack Compose and Material 3, structured as
+                  MVVM — composable screens to ViewModel to repository to Room.
+                  Room is the single source of truth and everything is exposed as
+                  <code>Flow</code>, so a new transaction redraws the budget bar,
+                  the history list and the charts without any of them asking.
+                  Five screens: home with budget pacing, add-transaction, history
+                  grouped by day, insights with category breakdowns, settings.
+                </p>
+              </div>
+
+              <div class="pd__block">
+                <h4 class="pd__h">Why it matters to me</h4>
+                <p>
+                  It is my first Android app, and I came to it from a C++ and
+                  competitive-programming background — so Compose's state model,
+                  the Activity lifecycle and Room were all new ground. It is also
+                  the app that has to clear a new Play Console account's
+                  closed-testing requirement, which meant it had to be genuinely
+                  useful rather than a throwaway.
+                </p>
+              </div>
+
+              <div class="pd__block">
+                <h4 class="pd__h">Where it stands</h4>
+                <p>
+                  Built and in testing ahead of a Play Store release. The privacy
+                  policy is already published.
+                </p>
+              </div>
+
+              <ul class="tags pd__tags">
+                <li class="tag">Kotlin</li>
+                <li class="tag">Jetpack Compose</li>
+                <li class="tag">Material 3</li>
+                <li class="tag">Room</li>
+                <li class="tag">Coroutines</li>
+                <li class="tag">Flow</li>
+                <li class="tag">MVVM</li>
+              </ul>
             </div>
-          </article>
+          </details>
+
+          <details class="card project" name="project">
+            <summary class="project__summary">
+              <span class="project__head">
+                <svg class="project__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v4M12 17v4M3 12h4M17 12h4" />
+                  <rect x="8" y="8" width="8" height="8" rx="2" />
+                </svg>
+                <span class="project__status">At Walmart</span>
+              </span>
+              <h3 class="project__title">Document Intake Agent</h3>
+              <p class="project__desc">
+                An event-driven service that replaces manual triage of incoming
+                legal documents with a four-stage LLM agent pipeline.
+              </p>
+              <ul class="tags">
+                <li class="tag">Python</li>
+                <li class="tag">Kafka</li>
+                <li class="tag">Kubernetes</li>
+              </ul>
+              <span class="project__more">
+                <span class="project__more-open">Read more</span>
+                <span class="project__more-close">Show less</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+              </span>
+            </summary>
+
+            <div class="pd">
+              <p class="pd__lead">
+                Legal documents served against the company used to be triaged by
+                hand: someone read the PDF, worked out what kind of matter it was,
+                decided which attorney and paralegal should own it, and opened the
+                case. This service does that intake automatically.
+              </p>
+
+              <div class="pd__block">
+                <h4 class="pd__h">The pipeline</h4>
+                <p>
+                  A Kafka consumer picks up document events, pulls the PDF, and
+                  runs it through four LLM-backed stages that share session
+                  state — <strong>extract → classify → summarise → assign</strong>
+                  — then files the result into the downstream case-management
+                  system over REST, with the owners already attached.
+                </p>
+              </div>
+
+              <div class="pd__block">
+                <h4 class="pd__h">Why Kafka rather than a webhook</h4>
+                <p>
+                  At-least-once delivery with replay. If the pipeline or anything
+                  downstream is unavailable, the offset simply isn't committed and
+                  the message comes back on the next poll. Nothing is dropped, and
+                  the upstream system doesn't have to grow retry logic of its own
+                  to make that true.
+                </p>
+              </div>
+
+              <div class="pd__block">
+                <h4 class="pd__h">Around the pipeline</h4>
+                <ul class="pd__list">
+                  <li>A FastAPI service for manual re-runs and health checks</li>
+                  <li>Prometheus metrics and a SQL audit trail for every decision the agent makes</li>
+                  <li>A vector database for similar-matter search, with embeddings backfilled across historical records</li>
+                  <li>A regression harness, so prompt and model changes are measured rather than guessed at</li>
+                </ul>
+              </div>
+
+              <div class="pd__block">
+                <h4 class="pd__h">Also at Walmart</h4>
+                <p>
+                  Backend services in Java and Spring Boot, with Redis and Guava
+                  caching on the read paths, containerised with Docker and run on
+                  Kubernetes.
+                </p>
+              </div>
+
+              <p class="pd__note">
+                Internal system names and architecture are deliberately left out
+                here. Happy to talk through the details in an interview.
+              </p>
+
+              <ul class="tags pd__tags">
+                <li class="tag">Python</li>
+                <li class="tag">FastAPI</li>
+                <li class="tag">Kafka</li>
+                <li class="tag">LLM Agents</li>
+                <li class="tag">Vector Search</li>
+                <li class="tag">Kubernetes</li>
+                <li class="tag">Docker</li>
+                <li class="tag">Prometheus</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -485,14 +723,16 @@
           <article class="card hobby reveal">
             <div class="hobby__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
-                <path d="M8 6l-5 6 5 6M16 6l5 6-5 6M13 4l-2 16" />
+                <path d="M14.5 3.5a4 4 0 0 1 0 5.66l-4.6 4.6a3 3 0 0 1-4.24-4.25l4.6-4.6a4 4 0 0 1 4.24-1.41z" />
+                <path d="M13.5 13.5 20 20" />
+                <circle cx="18.5" cy="6.5" r="1.6" />
               </svg>
             </div>
             <div>
-              <h3 class="hobby__title">Competitive Programming</h3>
+              <h3 class="hobby__title">Badminton</h3>
               <p class="hobby__desc">
-                Weekend contests, and the occasional greedy solution that turns
-                out to be correct.
+                Fast rallies and worse footwork. The one sport I'll drop
+                everything for.
               </p>
             </div>
           </article>

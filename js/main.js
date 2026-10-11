@@ -8,7 +8,8 @@
      4. Navbar shadow on scroll + current year in the footer
      5. Cursor spotlight on cards
      6. Count-up for the rating stat
-     7. Smooth-scroll fallback where CSS scroll-behavior is missing
+     7. Expanding project cards
+     8. Smooth-scroll fallback where CSS scroll-behavior is missing
    No dependencies. Runs after the DOM is parsed (script is at end of <body>).
    ========================================================================== */
 
@@ -242,7 +243,63 @@
   }
 
   /* ------------------------------------------------------------------
-     7. SMOOTH-SCROLL FALLBACK
+     7. EXPANDING PROJECT CARDS
+     The markup is native <details>, so clicking a card already opens and
+     closes it with JS disabled. This only adds the height animation:
+     open immediately and grow, or shrink first and close at the end.
+     ------------------------------------------------------------------ */
+  var projects = Array.prototype.slice.call(document.querySelectorAll(".project"));
+
+  projects.forEach(function (card) {
+    var panel = card.querySelector(".pd");
+    if (!panel) return;
+
+    var animation = null;
+
+    var runs = function () {
+      // Honour reduced motion, and never fight an in-flight animation
+      return !prefersReducedMotion && typeof panel.animate === "function";
+    };
+
+    var sizeTo = function (from, to, done) {
+      card.classList.add("is-animating");
+      if (animation) animation.cancel();
+      animation = panel.animate(
+        { height: [from + "px", to + "px"], opacity: [from ? 1 : 0, to ? 1 : 0] },
+        { duration: 320, easing: "cubic-bezier(0.22, 0.61, 0.36, 1)" }
+      );
+      animation.onfinish = function () {
+        animation = null;
+        card.classList.remove("is-animating");
+        if (done) done();
+      };
+      animation.oncancel = function () {
+        card.classList.remove("is-animating");
+      };
+    };
+
+    card.addEventListener("click", function (event) {
+      var summary = event.target.closest("summary");
+      if (!summary || summary.parentElement !== card) return;
+      if (!runs()) return; // let <details> do its own thing
+
+      event.preventDefault();
+
+      if (card.open) {
+        // Collapse: shrink from the current height, then actually close
+        sizeTo(panel.offsetHeight, 0, function () {
+          card.open = false;
+        });
+      } else {
+        // Expand: open first so the panel has a measurable height
+        card.open = true;
+        sizeTo(0, panel.offsetHeight);
+      }
+    });
+  });
+
+  /* ------------------------------------------------------------------
+     8. SMOOTH-SCROLL FALLBACK
      Only needed where CSS scroll-behavior isn't supported (older
      Safari). Modern browsers take the CSS path and skip this entirely.
      ------------------------------------------------------------------ */

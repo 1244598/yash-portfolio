@@ -32,11 +32,20 @@ Build a polished, modern, **static** personal portfolio website for Yash Laxkar 
 ## Sections (in order)
 1. **Hero**: Name, short tagline (e.g. "Software Engineer at Walmart Global Tech | Competitive Programmer"), two buttons (View Projects, Contact Me), and the profile photo.
 2. **About Me**: A short, personal paragraph. Mention IIT Kharagpur, Walmart, competitive programming, and fitness.
-3. **Experience**: Walmart Global Tech (Software Engineer, joined Aug 2025, Bengaluru) and Software Development Intern at Walmart (May to Jul 2024). Present as a clean vertical timeline.
+3. **Experience**: Walmart Global Tech (**Software Engineer II**, joined Aug 2025, Bengaluru) and Software Development Intern at Walmart (May to Jul 2024). Present as a clean vertical timeline.
+   Stack: Java, Spring Boot, Python, Kafka, Redis, Guava Cache, Docker, Kubernetes.
 4. **Competitive Programming**: Codeforces Specialist (peak rating 1518, handle `yash_laxkar1`). Show as stat cards with links to the profiles. **CodeChef has been removed** — that account is lost. Do not re-add it.
-5. **Projects**: Card grid. Start with placeholders the owner can fill in:
-   - Personal swing-trading signal app (technicals + sentiment + order book depth)
-   - Android app(s) planned for the Google Play Store
+5. **Projects**: Card grid of **expanding** cards. Each card is a native `<details>`; clicking it
+   opens a detailed write-up **in place on the same page** — never a new page or a new tab — and
+   clicking again closes it. An open card spans the full grid row. Keep the native `<details>`
+   so it still works with JavaScript off; `js/main.js` only adds the height animation.
+   Current three, written from the real repos:
+   - **Swing-Trading Signal System** — `trading-signal-app` (Kotlin/Compose) + `trading-signal-backend`
+     (Spring Boot + Python FinBERT). Layer weights 45/35/20.
+   - **Kharcha** — offline-first expense manager, Room + Compose, heading to the Play Store.
+   - **Document Intake Agent** — Walmart work. Kafka + four-stage LLM agent pipeline on Kubernetes.
+     **Keep internal system names, codenames and architecture out of this page.** Describe the
+     problem and the technology only.
    - Leave an easy-to-copy card template with a comment so more projects can be added.
 6. **Skills**: Grouped chips: C/C++, Python, Java (Spring Boot), React.js, PostgreSQL/MySQL, Git.
 7. **Education**: IIT Kharagpur, M.Sc (5-year integrated) in Mathematics & Computing, 2025.
@@ -44,7 +53,9 @@ Build a polished, modern, **static** personal portfolio website for Yash Laxkar 
    photographer credit kept visible. **Do not display CGPA** anywhere on the
    page, and do not record the figure in this repo (it is a public repo) — not in
    markup, not in comments, not here. Do not add it back unless asked.
-8. **Hobbies / Beyond Code**: Gym and fitness, competitive programming. Keep the tone personal and a little playful. Use icon-style cards.
+8. **Hobbies / Beyond Code**: Gym and fitness, and **badminton**. Keep the tone personal and a
+   little playful. Use icon-style cards. **Competitive programming does not belong here** — it has
+   its own section above, and the owner asked for it removed from this one.
 9. **Contact**: Email, phone (`tel:`), LinkedIn, GitHub, Codeforces links. Use `mailto:` for email. No backend form (a simple "Say hello" email button is enough).
 10. **Footer**: Copyright line and a back-to-top link.
 

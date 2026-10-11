@@ -1124,13 +1124,41 @@ svg {
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: start;
   gap: var(--sp-4);
 }
 
 .project {
-  display: flex;
-  flex-direction: column;
+  padding: 0;
+}
+
+/* An open card takes the whole row, so the detail has room to breathe
+   instead of squeezing into one grid column. */
+.project[open] {
+  grid-column: 1 / -1;
+  border-color: var(--accent-tint-2);
+}
+
+.project__summary {
+  display: block;
   padding: var(--sp-5);
+  cursor: pointer;
+  list-style: none;
+  border-radius: inherit;
+}
+
+/* Hide the native disclosure triangle in every engine */
+.project__summary::-webkit-details-marker {
+  display: none;
+}
+
+.project__summary::marker {
+  content: "";
+}
+
+.project__summary:focus-visible {
+  outline: 2px solid var(--accent-bright);
+  outline-offset: -3px;
 }
 
 .project__head {
@@ -1150,6 +1178,7 @@ svg {
   border-radius: var(--r-sm);
   background: var(--accent-tint);
   stroke-width: 1.6;
+  flex-shrink: 0;
 }
 
 .project__status {
@@ -1161,6 +1190,7 @@ svg {
   padding: 0.2rem 0.5rem;
   border: 1px solid var(--line);
   border-radius: var(--r-pill);
+  white-space: nowrap;
 }
 
 .project__title {
@@ -1171,35 +1201,170 @@ svg {
   margin-top: var(--sp-2);
   font-size: var(--fs-sm);
   color: var(--text-mute);
-  flex-grow: 1;
 }
 
-.project__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--sp-4);
+/* The affordance that says "this opens" */
+.project__more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
   margin-top: var(--sp-4);
   padding-top: var(--sp-3);
   border-top: 1px solid var(--line);
+  width: 100%;
   font-size: var(--fs-sm);
   font-weight: 600;
-}
-
-.project__links a {
   color: var(--accent-bright);
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--t-fast);
+  transition: color var(--t-fast);
 }
 
-.project__links a:hover {
-  border-bottom-color: var(--accent-glow);
+.project__more svg {
+  width: 15px;
+  height: 15px;
+  transition: transform var(--t-mid);
 }
 
-.project__soon {
+.project:hover .project__more {
+  color: var(--accent);
+}
+
+.project:hover .project__more svg {
+  transform: translateY(2px);
+}
+
+.project[open] .project__more svg {
+  transform: rotate(180deg);
+}
+
+/* Swap the label without needing JS to rewrite text */
+.project__more-close,
+.project[open] .project__more-open {
+  display: none;
+}
+
+.project[open] .project__more-close {
+  display: inline;
+}
+
+/* --- The expanding panel --- */
+.pd {
+  /* Two columns once there is room, so an expanded card fills its width
+     instead of leaving half the row empty. Lead, note and tags span both. */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  align-items: start;
+  gap: var(--sp-5) var(--sp-7);
+  padding: 0 var(--sp-5) var(--sp-5);
+  font-size: var(--fs-sm);
+  color: var(--text-mute);
+}
+
+.pd__lead,
+.pd__note,
+.pd__tags {
+  grid-column: 1 / -1;
+}
+
+/* js/main.js animates this open and closed; the rule is written so that
+   with JS off the panel simply appears, which is what <details> does. */
+.project.is-animating .pd {
+  overflow: hidden;
+}
+
+.pd__lead {
+  max-width: 74ch;
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: var(--text-soft);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--line);
+}
+
+.pd__block {
+  max-width: 68ch;
+}
+
+.pd__h {
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
-  font-weight: 400;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--sp-2);
+}
+
+.pd p {
+  line-height: 1.7;
+}
+
+.pd code {
+  font-family: var(--font-mono);
+  font-size: 0.8125em;
+  color: var(--text-soft);
+  padding: 0.1em 0.35em;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: rgb(255 255 255 / 0.04);
+}
+
+.pd__list,
+.pd__layers {
+  display: grid;
+  gap: var(--sp-3);
+}
+
+.pd__list li,
+.pd__layers li {
+  position: relative;
+  padding-left: var(--sp-5);
+  line-height: 1.65;
+}
+
+.pd__list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Weight badge on the signal-layer list */
+.pd__layers li {
+  padding-left: 3.4rem;
+}
+
+.pd__w {
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--accent);
+  padding: 0.1rem 0.35rem;
+  border: 1px solid var(--accent-tint-2);
+  border-radius: var(--r-sm);
+  background: var(--accent-tint);
+}
+
+.pd__note {
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--fs-xs);
+  line-height: 1.6;
   color: var(--text-mute);
+  border-left: 2px solid var(--accent-tint-2);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  background: rgb(255 255 255 / 0.03);
+}
+
+.pd__tags {
+  margin-top: 0;
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--line);
 }
 
 /* ============================== 12. SKILLS ============================== */
@@ -1250,6 +1415,10 @@ svg {
   position: relative;
   margin: 0;
   min-height: 240px;
+  /* Without this the hover scale pushes the image out past the gradient
+     that is supposed to fade it, which shows up as a hard vertical seam
+     down the middle of the card. */
+  overflow: hidden;
 }
 
 .edu__photo img {
@@ -1260,6 +1429,21 @@ svg {
      rather than glaring out of it; warms up on hover. */
   filter: saturate(0.96) brightness(0.94);
   transition: filter var(--t-slow), transform var(--t-slow);
+  /* Fade the IMAGE itself to transparent rather than covering it with a
+     solid colour. The card background is a gradient, so any solid fade
+     target mismatches it and shows up as a hard vertical seam. */
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    #000 48%,
+    rgb(0 0 0 / 0.45) 80%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    #000 48%,
+    rgb(0 0 0 / 0.45) 80%,
+    transparent 100%
+  );
 }
 
 .edu:hover .edu__photo img {
@@ -1268,19 +1452,14 @@ svg {
 }
 
 /* Gradient fade into the card so the photo has no hard rectangular edge */
+/* Only a soft vignette now — the sideways fade is handled by the mask on
+   the image, which cannot mismatch the card background. */
 .edu__photo::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(
-      90deg,
-      transparent 28%,
-      rgb(17 20 29 / 0.35) 58%,
-      rgb(17 20 29 / 0.82) 84%,
-      var(--surface) 99%
-    ),
-    linear-gradient(180deg, rgb(8 9 14 / 0.28), transparent 38%);
+  background: linear-gradient(180deg, rgb(8 9 14 / 0.3), transparent 42%);
 }
 
 .edu__credit {
@@ -1571,14 +1750,19 @@ svg {
     aspect-ratio: 16 / 9;
   }
 
-  /* Fade downward into the card instead of sideways */
-  .edu__photo::after {
-    background: linear-gradient(
+  /* Stacked: fade downward instead of sideways */
+  .edu__photo img {
+    -webkit-mask-image: linear-gradient(
       180deg,
-      rgb(8 9 14 / 0.25) 0%,
-      transparent 30%,
-      rgb(17 20 29 / 0.6) 82%,
-      var(--surface) 100%
+      #000 55%,
+      rgb(0 0 0 / 0.45) 85%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      180deg,
+      #000 55%,
+      rgb(0 0 0 / 0.45) 85%,
+      transparent 100%
     );
   }
 
