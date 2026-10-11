@@ -10,8 +10,9 @@
                                      Currently the only broken link.
   2. PROJECTS (data-todo="project")  Real descriptions + links. A copy-paste
                                      card template sits above the first card.
-  3. OG IMAGE (data-todo="meta")     Add assets/og-image.png (1200x630) for
-                                     link previews, then check og:url.
+  (Social preview: assets/og-image.jpg is in place and og:image uses an
+   ABSOLUTE url, which LinkedIn and other scrapers require. If the site
+   ever moves, update og:url, og:image and twitter:image together.)
 
   Everything else is real, verified content. Never add achievements, metrics
   or links that aren't yours.
@@ -33,7 +34,7 @@
   <meta name="author" content="Yash Laxkar" />
   <meta name="theme-color" content="#08090e" />
 
-  <!-- Open Graph / social previews — data-todo="meta" -->
+  <!-- Open Graph / social previews -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Yash Laxkar — Software Engineer II" />
   <meta
@@ -41,9 +42,21 @@
     content="Software Engineer II at Walmart Global Tech. IIT Kharagpur. Competitive programmer."
   />
   <meta property="og:url" content="https://1244598.github.io/yash-portfolio/" />
-  <!-- TODO: add assets/og-image.png (1200x630) -->
-  <meta property="og:image" content="assets/og-image.png" />
+  <meta property="og:site_name" content="Yash Laxkar" />
+  <meta property="og:locale" content="en_IN" />
+  <!-- Social scrapers (LinkedIn especially) do NOT resolve relative image
+       paths — og:image has to be an absolute URL. This is the one place on
+       the site where a relative path is wrong. Update it if the site moves. -->
+  <meta property="og:image" content="https://1244598.github.io/yash-portfolio/assets/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta
+    property="og:image:alt"
+    content="Yash Laxkar — Software Engineer II at Walmart Global Tech, Competitive Programmer"
+  />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://1244598.github.io/yash-portfolio/assets/og-image.jpg" />
   <meta name="twitter:title" content="Yash Laxkar — Software Engineer II" />
   <meta
     name="twitter:description"

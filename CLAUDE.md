@@ -11,6 +11,9 @@ Build a polished, modern, **static** personal portfolio website for Yash Laxkar 
   - `js/main.js`
   - `assets/` (images, resume PDF, favicon)
 - All asset paths must be **relative** (e.g. `assets/profile.jpg`, not `/assets/profile.jpg`) so the site works under a GitHub Pages project URL.
+  **One exception:** `og:image` / `twitter:image` must be **absolute URLs** — LinkedIn and other
+  scrapers do not resolve relative paths, and the preview silently comes out blank. If the site
+  moves, update `og:url`, `og:image` and `twitter:image` together.
 - Google Fonts via `<link>` is allowed. Keep everything else self-contained.
 - Fully responsive (mobile-first). Test at **320, 360, 375, 768 and 1280** — 320/360 is where
   things actually break, and they are common Android widths.

@@ -8,7 +8,7 @@ render — the page has fallbacks — but each file below unlocks something.
 | `iitkgp-campus.jpg` | Photo in the Education card. **Already added** (900×600). | 3:2 landscape |
 | `profile.jpg` | Hero portrait. **Already added** (600×600, cropped from the original). | Square, 600×600+ |
 | `resume.pdf` | Wires up the "Download résumé" link in the hero. | — |
-| `og-image.png` | Preview card when the site is shared on LinkedIn/X/WhatsApp. | 1200×630 |
+| `og-image.jpg` | Preview card when shared on LinkedIn/X/WhatsApp. **Already added** (1200×630). | — |
 | `kharcha/*.png` | Kharcha app screenshots in the Projects section. **Already added** (4 × 320×711). | — |
 | `favicon.svg` | Browser tab icon. **Already included.** | — |
 
