@@ -50,6 +50,7 @@ Build a polished, modern, **static** personal portfolio website for Yash Laxkar 
    - **Swing-Trading Signal System** — `trading-signal-app` (Kotlin/Compose) + `trading-signal-backend`
      (Spring Boot + Python FinBERT). Layer weights 45/35/20.
    - **Kharcha** — offline-first expense manager, Room + Compose, heading to the Play Store.
+     Shows four real app screenshots (`assets/kharcha/`), sourced from that repo's Play Store assets.
    - **Document Intake Agent** — Walmart work. Kafka + four-stage LLM agent pipeline on Kubernetes.
      **Keep internal system names, codenames and architecture out of this page.** Describe the
      problem and the technology only.

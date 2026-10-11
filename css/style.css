@@ -1363,6 +1363,52 @@ svg {
   background: var(--accent-tint);
 }
 
+/* --- Screenshot gallery inside a project panel --- */
+.pd__block--wide {
+  grid-column: 1 / -1;
+  max-width: none;
+}
+
+.shots {
+  display: grid;
+  /* minmax(0, 1fr) rather than a px minimum: these can never force a track
+     wider than the card, whatever the screen. */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--sp-4);
+  max-width: 880px;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  box-shadow: 0 10px 26px rgb(0 0 0 / 0.45);
+  /* The app is light-themed, so it is dimmed slightly to sit in a dark
+     page and comes up to full brightness on hover. */
+  filter: saturate(0.94) brightness(0.9);
+  transition: transform var(--t-mid), filter var(--t-mid),
+    box-shadow var(--t-mid), border-color var(--t-mid);
+}
+
+.shot:hover img {
+  transform: translateY(-5px);
+  filter: none;
+  border-color: var(--accent-tint-2);
+  box-shadow: 0 18px 36px rgb(0 0 0 / 0.55), 0 0 0 1px var(--accent-tint-2);
+}
+
+.shot__cap {
+  display: block;
+  margin-top: var(--sp-2);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.06em;
+  color: var(--text-mute);
+}
+
 .pd__note {
   padding: var(--sp-3) var(--sp-4);
   font-size: var(--fs-xs);
@@ -1811,6 +1857,12 @@ svg {
 
   .pd__w {
     top: 0;
+  }
+
+  /* Four phone screenshots are unreadable at phone width; two is legible */
+  .shots {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-3);
   }
 
   .nav__brandtext {

@@ -9,6 +9,7 @@ render — the page has fallbacks — but each file below unlocks something.
 | `profile.jpg` | Hero portrait. **Already added** (600×600, cropped from the original). | Square, 600×600+ |
 | `resume.pdf` | Wires up the "Download résumé" link in the hero. | — |
 | `og-image.png` | Preview card when the site is shared on LinkedIn/X/WhatsApp. | 1200×630 |
+| `kharcha/*.png` | Kharcha app screenshots in the Projects section. **Already added** (4 × 420×933). | — |
 | `favicon.svg` | Browser tab icon. **Already included.** | — |
 
 ## Replacing `profile.jpg`
@@ -30,3 +31,13 @@ credit. If you don't have permission for it, replace the file with your own
 photo of campus — the markup and styling need no changes.
 
 Keep `.edu__credit` in `index.html` for as long as you keep this photo.
+
+## Kharcha screenshots
+
+`kharcha/home.png`, `insights.png`, `add.png` and `trends.png` come from the
+Kharcha repo's `docs/store-assets/` (the Play Store listing assets), resized
+to 420×933 and quantised to a 128-colour palette — about 21 KB each instead
+of 210 KB, with UI text still crisp.
+
+They are lazy-loaded and sit inside a collapsed `<details>`, so nothing is
+fetched until someone opens the Kharcha card.
