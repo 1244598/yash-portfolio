@@ -9,7 +9,7 @@ render — the page has fallbacks — but each file below unlocks something.
 | `profile.jpg` | Hero portrait. **Already added** (600×600, cropped from the original). | Square, 600×600+ |
 | `resume.pdf` | Wires up the "Download résumé" link in the hero. | — |
 | `og-image.png` | Preview card when the site is shared on LinkedIn/X/WhatsApp. | 1200×630 |
-| `kharcha/*.png` | Kharcha app screenshots in the Projects section. **Already added** (4 × 420×933). | — |
+| `kharcha/*.png` | Kharcha app screenshots in the Projects section. **Already added** (4 × 320×711). | — |
 | `favicon.svg` | Browser tab icon. **Already included.** | — |
 
 ## Replacing `profile.jpg`
@@ -36,8 +36,13 @@ Keep `.edu__credit` in `index.html` for as long as you keep this photo.
 
 `kharcha/home.png`, `insights.png`, `add.png` and `trends.png` come from the
 Kharcha repo's `docs/store-assets/` (the Play Store listing assets), resized
-to 420×933 and quantised to a 128-colour palette — about 21 KB each instead
+to 320×711 and quantised to a 128-colour palette — about 15 KB each instead
 of 210 KB, with UI text still crisp.
 
-They are lazy-loaded and sit inside a collapsed `<details>`, so nothing is
-fetched until someone opens the Kharcha card.
+They sit in a horizontal scroll strip (`.shots`) inside a collapsed
+`<details>`, and are lazy-loaded — so nothing is fetched until someone opens
+the Kharcha card, and off-screen shots wait until they're scrolled to.
+
+To add one, drop a PNG in here and copy a `<li class="shot">` in the Kharcha
+panel. The strip scrolls rather than wrapping, so extra shots cost no
+vertical space.

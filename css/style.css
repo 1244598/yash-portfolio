@@ -1370,33 +1370,68 @@ svg {
 }
 
 .shots {
-  display: grid;
-  /* minmax(0, 1fr) rather than a px minimum: these can never force a track
-     wider than the card, whatever the screen. */
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--sp-4);
-  max-width: 880px;
+  /* Horizontal strip rather than a grid: four phone screenshots stacked
+     vertically swallowed the whole panel. Scrolls sideways when they
+     don't all fit. */
+  display: flex;
+  gap: var(--sp-3);
+  margin: 0;
+  padding-bottom: var(--sp-3);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-tint-2) transparent;
+}
+
+.shots:focus-visible {
+  outline: 2px solid var(--accent-bright);
+  outline-offset: 4px;
+  border-radius: var(--r-sm);
+}
+
+.shots::-webkit-scrollbar {
+  height: 6px;
+}
+
+.shots::-webkit-scrollbar-track {
+  border-radius: var(--r-pill);
+  background: rgb(255 255 255 / 0.05);
+}
+
+.shots::-webkit-scrollbar-thumb {
+  border-radius: var(--r-pill);
+  background: var(--accent-tint-2);
+}
+
+.shots::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+.shot {
+  flex: 0 0 150px;
+  scroll-snap-align: start;
 }
 
 .shot img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid rgb(255 255 255 / 0.12);
-  box-shadow: 0 10px 26px rgb(0 0 0 / 0.45);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.45);
   /* The app is light-themed, so it is dimmed slightly to sit in a dark
      page and comes up to full brightness on hover. */
-  filter: saturate(0.94) brightness(0.9);
+  filter: saturate(0.94) brightness(0.88);
   transition: transform var(--t-mid), filter var(--t-mid),
     box-shadow var(--t-mid), border-color var(--t-mid);
 }
 
 .shot:hover img {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   filter: none;
   border-color: var(--accent-tint-2);
-  box-shadow: 0 18px 36px rgb(0 0 0 / 0.55), 0 0 0 1px var(--accent-tint-2);
+  box-shadow: 0 16px 32px rgb(0 0 0 / 0.55), 0 0 0 1px var(--accent-tint-2);
 }
 
 .shot__cap {
@@ -1404,7 +1439,7 @@ svg {
   margin-top: var(--sp-2);
   text-align: center;
   font-family: var(--font-mono);
-  font-size: var(--fs-xs);
+  font-size: 0.6875rem;
   letter-spacing: 0.06em;
   color: var(--text-mute);
 }
@@ -1859,10 +1894,9 @@ svg {
     top: 0;
   }
 
-  /* Four phone screenshots are unreadable at phone width; two is legible */
-  .shots {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--sp-3);
+  /* Narrower cards on a phone so more than one is visible at a time */
+  .shot {
+    flex-basis: 132px;
   }
 
   .nav__brandtext {
