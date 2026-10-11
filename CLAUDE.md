@@ -63,12 +63,12 @@ Build a polished, modern, **static** personal portfolio website for Yash Laxkar 
 8. **Hobbies / Beyond Code**: Gym and fitness, and **badminton**. Keep the tone personal and a
    little playful. Use icon-style cards. **Competitive programming does not belong here** — it has
    its own section above, and the owner asked for it removed from this one.
-9. **Contact**: Email, phone (`tel:`), LinkedIn, GitHub, Codeforces links. Use `mailto:` for email. No backend form (a simple "Say hello" email button is enough).
+9. **Contact**: Email, LinkedIn, GitHub, Codeforces links. Use `mailto:` for email. No backend form (a simple "Say hello" email button is enough).
+   **No phone number.** It was published and then removed at the owner's request; do not add one back, and do not record the number in this repo.
 10. **Footer**: Copyright line and a back-to-top link.
 
 ## Real contact details (now live on the site)
 - Email: `yashlaxkar1@gmail.com`
-- Phone: `+91 87419 62932` (shown publicly as a `tel:` link — remove it if it attracts spam)
 - LinkedIn: https://www.linkedin.com/in/yash-laxkar-9b176420b/
 - GitHub: https://github.com/1244598
 - Codeforces: https://codeforces.com/profile/yash_laxkar1
