@@ -120,6 +120,9 @@ body {
   text-rendering: optimizeLegibility;
   overflow-x: clip;
   position: relative;
+  /* Last-resort guard so a long email or handle wraps instead of
+     punching through its container on a narrow screen. */
+  overflow-wrap: break-word;
 }
 
 /* Dot grid — gives the dark background some texture instead of flat black.
@@ -1123,7 +1126,7 @@ svg {
 /* ============================= 11. PROJECTS ============================= */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   align-items: start;
   gap: var(--sp-4);
 }
@@ -1251,7 +1254,10 @@ svg {
   /* Two columns once there is room, so an expanded card fills its width
      instead of leaving half the row empty. Lead, note and tags span both. */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  /* min() is load-bearing: a bare minmax(330px, …) forces a 330px track even
+     when the card is only ~280px wide, which pushes the text off a small
+     phone. min(330px, 100%) lets the track shrink instead. */
+  grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
   align-items: start;
   gap: var(--sp-5) var(--sp-7);
   padding: 0 var(--sp-5) var(--sp-5);
@@ -1263,6 +1269,12 @@ svg {
 .pd__note,
 .pd__tags {
   grid-column: 1 / -1;
+}
+
+/* Grid items default to min-width:auto and will not shrink below their
+   content; this lets them. */
+.pd > * {
+  min-width: 0;
 }
 
 /* js/main.js animates this open and closed; the rule is written so that
@@ -1524,7 +1536,7 @@ svg {
 /* ============================= 14. HOBBIES ============================== */
 .hobbies {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
   gap: var(--sp-4);
 }
 
@@ -1729,10 +1741,10 @@ svg {
 
   .hero__aura {
     right: auto;
-    left: 10%;
+    left: 8%;
     top: 170px;
-    width: 300px;
-    height: 300px;
+    width: min(300px, 70vw);
+    height: min(300px, 70vw);
   }
 
   .about {
@@ -1779,6 +1791,26 @@ svg {
 @media (max-width: 560px) {
   :root {
     --nav-h: 58px;
+  }
+
+  /* Tighter panel padding and indents — at 320px the old values left
+     barely any room for the text itself. */
+  .pd {
+    padding: 0 var(--sp-4) var(--sp-4);
+    gap: var(--sp-4);
+  }
+
+  .project__summary {
+    padding: var(--sp-4);
+  }
+
+  .pd__layers li {
+    padding-left: 0;
+    padding-top: 1.9rem;
+  }
+
+  .pd__w {
+    top: 0;
   }
 
   .nav__brandtext {

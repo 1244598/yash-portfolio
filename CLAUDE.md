@@ -12,7 +12,14 @@ Build a polished, modern, **static** personal portfolio website for Yash Laxkar 
   - `assets/` (images, resume PDF, favicon)
 - All asset paths must be **relative** (e.g. `assets/profile.jpg`, not `/assets/profile.jpg`) so the site works under a GitHub Pages project URL.
 - Google Fonts via `<link>` is allowed. Keep everything else self-contained.
-- Fully responsive (mobile-first). Test at 375px, 768px, and 1280px widths.
+- Fully responsive (mobile-first). Test at **320, 360, 375, 768 and 1280** — 320/360 is where
+  things actually break, and they are common Android widths.
+- **Never grid with a bare `minmax(Npx, 1fr)`.** Use `minmax(min(Npx, 100%), 1fr)`, or the track
+  refuses to shrink and pushes content off a narrow screen.
+- `html` has `overflow-x: clip`, which means **`scrollWidth` can never detect overflow** — it will
+  always equal the viewport while content is silently clipped. To test, walk every element and
+  compare `getBoundingClientRect().right` against `clientWidth`, ignoring anything an ancestor
+  clips. Also test with the project cards **open**; a collapsed `<details>` hides its own bugs.
 - Semantic HTML, proper `alt` text, good contrast, visible keyboard focus states, and `prefers-reduced-motion` respected.
 - Add proper `<title>`, meta description, and Open Graph tags.
 
